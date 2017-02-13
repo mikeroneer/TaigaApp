@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Login" id="BYZ-38-t0r" customClass="LoginViewController" customModule="taiga_client_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,99 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_background" translatesAutoresizingMaskIntoConstraints="NO" id="dCm-F6-5HO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="taiga_icon" translatesAutoresizingMaskIntoConstraints="NO" id="4U1-Xi-ReM">
+                                <rect key="frame" x="137.5" y="120" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="ShD-QI-f1M"/>
+                                    <constraint firstAttribute="height" constant="100" id="Z2l-ib-Gxc"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAIGA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHz-GH-NI7">
+                                <rect key="frame" x="132.5" y="229.5" width="110" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="UDL-V2-R5H"/>
+                                    <constraint firstAttribute="height" constant="48" id="wqW-CT-j37"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Server" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h0e-ks-KiT">
+                                <rect key="frame" x="62.5" y="318.5" width="250" height="30"/>
+                                <color key="backgroundColor" red="0.98039215690000003" green="1" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="9cY-BC-f3p"/>
+                                    <constraint firstAttribute="height" constant="30" id="hse-Hj-ghl"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Username or email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZLn-cp-Q0x">
+                                <rect key="frame" x="62.5" y="358.5" width="250" height="30"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="1" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="KZu-IV-o78"/>
+                                    <constraint firstAttribute="height" constant="30" id="h0K-Xm-2uS"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cyc-jF-Vir">
+                                <rect key="frame" x="62.5" y="398.5" width="250" height="30"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="1" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="jhC-lr-UQV"/>
+                                    <constraint firstAttribute="height" constant="30" id="peE-MO-cU6"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZlJ-25-03a">
+                                <rect key="frame" x="62.5" y="438.5" width="250" height="30"/>
+                                <color key="backgroundColor" red="0.61568627450980395" green="0.80784313725490198" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="HE9-rh-KVV"/>
+                                    <constraint firstAttribute="height" constant="30" id="xJi-hv-pFr"/>
+                                </constraints>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dCm-F6-5HO" secondAttribute="trailing" id="1gD-XI-fnT"/>
+                            <constraint firstItem="ZLn-cp-Q0x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6WX-43-HkP"/>
+                            <constraint firstItem="ZlJ-25-03a" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="120" id="6gf-LZ-d2v"/>
+                            <constraint firstItem="nHz-GH-NI7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-80" id="6x9-dK-Yre"/>
+                            <constraint firstItem="4U1-Xi-ReM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CIL-YL-Giy"/>
+                            <constraint firstItem="nHz-GH-NI7" firstAttribute="top" secondItem="4U1-Xi-ReM" secondAttribute="bottom" constant="10" id="Jk8-16-9om"/>
+                            <constraint firstItem="h0e-ks-KiT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RsW-t5-TDW"/>
+                            <constraint firstItem="ZlJ-25-03a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YqJ-YS-93X"/>
+                            <constraint firstItem="nHz-GH-NI7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b97-qu-AMe"/>
+                            <constraint firstItem="ZLn-cp-Q0x" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="40" id="cw3-1h-NBF"/>
+                            <constraint firstItem="cyc-jF-Vir" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jm6-BK-g0u"/>
+                            <constraint firstItem="h0e-ks-KiT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="k2q-xR-SsL"/>
+                            <constraint firstItem="dCm-F6-5HO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="uHy-HO-7a1"/>
+                            <constraint firstItem="cyc-jF-Vir" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="80" id="vgW-fB-ytW"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dCm-F6-5HO" secondAttribute="bottom" id="xEy-J0-75k"/>
+                            <constraint firstItem="dCm-F6-5HO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yEC-xY-rj4"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="login_background" width="540" height="960"/>
+        <image name="taiga_icon" width="833" height="833"/>
+    </resources>
 </document>

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B4C2A4581E51B1DB000A92CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C2A4571E51B1DB000A92CF /* AppDelegate.swift */; };
-		B4C2A45A1E51B1DB000A92CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C2A4591E51B1DB000A92CF /* ViewController.swift */; };
+		B4C2A45A1E51B1DB000A92CF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C2A4591E51B1DB000A92CF /* LoginViewController.swift */; };
 		B4C2A45D1E51B1DB000A92CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4C2A45B1E51B1DB000A92CF /* Main.storyboard */; };
 		B4C2A4601E51B1DB000A92CF /* taiga_client_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4C2A45E1E51B1DB000A92CF /* taiga_client_ios.xcdatamodeld */; };
 		B4C2A4621E51B1DB000A92CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4C2A4611E51B1DB000A92CF /* Assets.xcassets */; };
@@ -37,7 +37,7 @@
 /* Begin PBXFileReference section */
 		B4C2A4541E51B1DB000A92CF /* taiga-client-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "taiga-client-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4C2A4571E51B1DB000A92CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B4C2A4591E51B1DB000A92CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B4C2A4591E51B1DB000A92CF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B4C2A45C1E51B1DB000A92CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B4C2A45F1E51B1DB000A92CF /* taiga_client_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = taiga_client_ios.xcdatamodel; sourceTree = "<group>"; };
 		B4C2A4611E51B1DB000A92CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				B4C2A4571E51B1DB000A92CF /* AppDelegate.swift */,
-				B4C2A4591E51B1DB000A92CF /* ViewController.swift */,
+				B4C2A4591E51B1DB000A92CF /* LoginViewController.swift */,
 				B4C2A45B1E51B1DB000A92CF /* Main.storyboard */,
 				B4C2A4611E51B1DB000A92CF /* Assets.xcassets */,
 				B4C2A4631E51B1DB000A92CF /* LaunchScreen.storyboard */,
@@ -262,7 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4C2A45A1E51B1DB000A92CF /* ViewController.swift in Sources */,
+				B4C2A45A1E51B1DB000A92CF /* LoginViewController.swift in Sources */,
 				B4C2A4601E51B1DB000A92CF /* taiga_client_ios.xcdatamodeld in Sources */,
 				B4C2A4581E51B1DB000A92CF /* AppDelegate.swift in Sources */,
 			);
