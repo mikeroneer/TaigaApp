@@ -9,21 +9,31 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    @IBOutlet weak var textServer: UITextField!
+    @IBOutlet weak var textUsername: UITextField!
+    @IBOutlet weak var textPassword: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        TaigaSettings.setBaseUrl(value: "https://api.taiga.io/api/v1")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     @IBAction func onLoginClick(_ sender: Any) {
-        AuthenticationManager.authenticateUser(username: "test", password: "ing") { (auth_token) in
-            print("fin")
+        if let server = textServer.text, !server.isEmpty {
+           TaigaSettings.setBaseUrl(value: textServer.text!)
+        } else {
+            TaigaSettings.setBaseUrl(value: TaigaSettings.DEFAULT_BASE_URL)
+        }
+        
+        guard let user = textUsername.text, let pass = textPassword.text, !user.isEmpty, !pass.isEmpty else {
+            return
+        }
+        
+        AuthenticationManager.authenticateUser(username: textUsername.text!, password: textPassword.text!) { (userAuthenticationDetail) in
+            print(userAuthenticationDetail.auth_token)
         }
     }
 }

@@ -12,20 +12,16 @@ import SwiftyJSON
 class AuthenticationManager {
     static let provider = MoyaProvider<AuthenticationService>()
     
-    static func authenticateUser(username: String, password: String, completion: @escaping (_ authToken: String) -> ()) {
+    static func authenticateUser(username: String, password: String, completion: @escaping (_ userAuthenticationDetail: UserAuthenticationDetail) -> ()) {
         provider.request(.authenticateUser(username: username, password: password)) { result in
             switch result {
             case let .success(moyaResponse):
                 let json = JSON(data: (moyaResponse.data))
-                print("Login successful")
-                print("Auth")
-                print(json["auth_token"])
-                print("User")
-                print(json["full_name"])
+                let userAuth = UserAuthenticationDetail(json: json)
+                completion(userAuth)
             default:
                 print("Request failed")
             }
-            
         }
     }
 }

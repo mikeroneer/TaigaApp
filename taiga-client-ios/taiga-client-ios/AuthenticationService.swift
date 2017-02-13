@@ -20,7 +20,7 @@ extension AuthenticationService : TargetType {
     var path: String {
         switch self {
         case .authenticateUser:
-            return "/auth/"
+            return "/auth"
         }
     }
     

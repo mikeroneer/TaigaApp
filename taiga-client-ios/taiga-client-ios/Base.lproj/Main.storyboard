@@ -108,6 +108,11 @@
                             <constraint firstItem="dCm-F6-5HO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yEC-xY-rj4"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textPassword" destination="cyc-jF-Vir" id="z5A-x7-PmE"/>
+                        <outlet property="textServer" destination="h0e-ks-KiT" id="vG8-xO-mzu"/>
+                        <outlet property="textUsername" destination="ZLn-cp-Q0x" id="Bn5-3S-Vz0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
