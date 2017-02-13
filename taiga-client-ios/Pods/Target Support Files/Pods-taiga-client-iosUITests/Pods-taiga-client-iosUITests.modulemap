@@ -1,0 +1,6 @@
+framework module Pods_taiga_client_iosUITests {
+  umbrella header "Pods-taiga-client-iosUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
