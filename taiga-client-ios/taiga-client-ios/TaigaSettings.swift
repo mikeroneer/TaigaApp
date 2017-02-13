@@ -20,4 +20,8 @@ class TaigaSettings {
         
         return DEFAULT_BASE_URL
     }
+    
+    class func setBaseUrl(value: String) {
+        UserDefaults.standard.set(value, forKey: KEY_BASE_URL)
+    }
 }

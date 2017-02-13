@@ -7,6 +7,7 @@
 //
 
 import Moya
+import SwiftyJSON
 
 class AuthenticationManager {
     static let provider = MoyaProvider<AuthenticationService>()
@@ -15,8 +16,12 @@ class AuthenticationManager {
         provider.request(.authenticateUser(username: username, password: password)) { result in
             switch result {
             case let .success(moyaResponse):
-                //let json = JSON(data: (moyaResponse.data))
+                let json = JSON(data: (moyaResponse.data))
                 print("Login successful")
+                print("Auth")
+                print(json["auth_token"])
+                print("User")
+                print(json["full_name"])
             default:
                 print("Request failed")
             }
