@@ -9,13 +9,15 @@
 import SwiftyJSON
 
 class UserAuthenticationDetail {
+    var id: Int
     var auth_token: String
     var full_name: String
     var total_private_projects: String
     var total_public_projects: String
     
     init(json: JSON) {
-        auth_token = "${".appending(json["auth_token"].stringValue).appending("}")
+        id = json["id"].intValue
+        auth_token = json["auth_token"].stringValue
         full_name = json["full_name"].stringValue
         total_private_projects = json["total_private_projects"].stringValue
         total_public_projects = json["total_public_projects"].stringValue

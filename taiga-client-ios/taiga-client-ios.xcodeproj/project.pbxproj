@@ -10,6 +10,11 @@
 		46F17142EE1B6484F358A328 /* Pods_taiga_client_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 581DDF2247ABEBD787A48550 /* Pods_taiga_client_ios.framework */; };
 		8512B89B9D81F96A1ACA1D77 /* Pods_taiga_client_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C060362E422E02D104C7C1 /* Pods_taiga_client_iosUITests.framework */; };
 		A93F261788B83805DA03D42A /* Pods_taiga_client_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427F40F9042C684B9F59147 /* Pods_taiga_client_iosTests.framework */; };
+		B44775C11E5322FC0026C5A1 /* ProjectOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44775C01E5322FC0026C5A1 /* ProjectOverviewViewController.swift */; };
+		B44775C31E53242C0026C5A1 /* ProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44775C21E53242C0026C5A1 /* ProjectService.swift */; };
+		B44775C51E5326CE0026C5A1 /* ProjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44775C41E5326CE0026C5A1 /* ProjectManager.swift */; };
+		B44775C71E5329BD0026C5A1 /* ProjectListEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44775C61E5329BD0026C5A1 /* ProjectListEntry.swift */; };
+		B44775C91E5339360026C5A1 /* TaigaAccessTokenPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44775C81E5339360026C5A1 /* TaigaAccessTokenPlugin.swift */; };
 		B45BBCFA1E51D7D7009ECB5A /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45BBCF91E51D7D7009ECB5A /* AuthenticationService.swift */; };
 		B45BBCFD1E51DE0C009ECB5A /* TaigaSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45BBCFC1E51DE0C009ECB5A /* TaigaSettings.swift */; };
 		B480C1D21E51E71600A41AD1 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480C1D11E51E71600A41AD1 /* AuthenticationManager.swift */; };
@@ -48,6 +53,11 @@
 		7DE4B01FDC460C2D49984A5C /* Pods-taiga-client-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-taiga-client-iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-taiga-client-iosTests/Pods-taiga-client-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		808CCCA0ADBAF948EC6150D8 /* Pods-taiga-client-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-taiga-client-iosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-taiga-client-iosUITests/Pods-taiga-client-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		86512E550DA31C495B14847A /* Pods-taiga-client-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-taiga-client-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-taiga-client-ios/Pods-taiga-client-ios.release.xcconfig"; sourceTree = "<group>"; };
+		B44775C01E5322FC0026C5A1 /* ProjectOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectOverviewViewController.swift; sourceTree = "<group>"; };
+		B44775C21E53242C0026C5A1 /* ProjectService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectService.swift; sourceTree = "<group>"; };
+		B44775C41E5326CE0026C5A1 /* ProjectManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectManager.swift; sourceTree = "<group>"; };
+		B44775C61E5329BD0026C5A1 /* ProjectListEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectListEntry.swift; sourceTree = "<group>"; };
+		B44775C81E5339360026C5A1 /* TaigaAccessTokenPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaigaAccessTokenPlugin.swift; sourceTree = "<group>"; };
 		B45BBCF91E51D7D7009ECB5A /* AuthenticationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		B45BBCFC1E51DE0C009ECB5A /* TaigaSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaigaSettings.swift; sourceTree = "<group>"; };
 		B480C1D11E51E71600A41AD1 /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
@@ -127,6 +137,8 @@
 			children = (
 				B45BBCF91E51D7D7009ECB5A /* AuthenticationService.swift */,
 				B480C1D11E51E71600A41AD1 /* AuthenticationManager.swift */,
+				B44775C21E53242C0026C5A1 /* ProjectService.swift */,
+				B44775C41E5326CE0026C5A1 /* ProjectManager.swift */,
 			);
 			name = service;
 			sourceTree = "<group>";
@@ -135,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				B45BBCFC1E51DE0C009ECB5A /* TaigaSettings.swift */,
+				B44775C81E5339360026C5A1 /* TaigaAccessTokenPlugin.swift */,
 			);
 			name = helper;
 			sourceTree = "<group>";
@@ -143,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				B480C1D41E51E8FB00A41AD1 /* UserAuthenticationDetail.swift */,
+				B44775C61E5329BD0026C5A1 /* ProjectListEntry.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -176,6 +190,7 @@
 				B45BBCFB1E51DDF5009ECB5A /* helper */,
 				B4C2A4571E51B1DB000A92CF /* AppDelegate.swift */,
 				B4C2A4591E51B1DB000A92CF /* LoginViewController.swift */,
+				B44775C01E5322FC0026C5A1 /* ProjectOverviewViewController.swift */,
 				B45BBCF81E51D798009ECB5A /* service */,
 				B4C2A45B1E51B1DB000A92CF /* Main.storyboard */,
 				B4C2A4611E51B1DB000A92CF /* Assets.xcassets */,
@@ -486,12 +501,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4C2A45A1E51B1DB000A92CF /* LoginViewController.swift in Sources */,
+				B44775C71E5329BD0026C5A1 /* ProjectListEntry.swift in Sources */,
 				B4C2A4601E51B1DB000A92CF /* taiga_client_ios.xcdatamodeld in Sources */,
 				B45BBCFD1E51DE0C009ECB5A /* TaigaSettings.swift in Sources */,
+				B44775C11E5322FC0026C5A1 /* ProjectOverviewViewController.swift in Sources */,
 				B480C1D21E51E71600A41AD1 /* AuthenticationManager.swift in Sources */,
 				B4C2A4581E51B1DB000A92CF /* AppDelegate.swift in Sources */,
 				B480C1D51E51E8FB00A41AD1 /* UserAuthenticationDetail.swift in Sources */,
+				B44775C51E5326CE0026C5A1 /* ProjectManager.swift in Sources */,
 				B45BBCFA1E51D7D7009ECB5A /* AuthenticationService.swift in Sources */,
+				B44775C31E53242C0026C5A1 /* ProjectService.swift in Sources */,
+				B44775C91E5339360026C5A1 /* TaigaAccessTokenPlugin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
