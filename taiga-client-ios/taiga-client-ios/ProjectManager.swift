@@ -19,17 +19,21 @@ class ProjectManager {
         provider = MoyaProvider<ProjectService>(plugins: [authPlugin, NetworkLoggerPlugin()])
     }
     
-    func getProjectsForUser(userid: Int, completion: @escaping (_ projectListEntries: [ProjectListEntry]?) -> ()) {
+    func getProjectsForUser(userid: Int, completion: @escaping (_ projectListEntries: [ProjectListEntry]) -> ()) {
         provider.request(.getProjectsForUser(userid: userid)) { result in
             switch result {
             case let .success(moyaResponse):
                 if moyaResponse.statusCode == 200 {
                     let json = JSON(data: (moyaResponse.data))
-                    print(json.stringValue)
-                } else {
-                    completion(nil)
+                    var projectListEntries: [ProjectListEntry] = []
+                    
+                    for projectJson in json.arrayValue {
+                        let entry = ProjectListEntry(json: projectJson)
+                        projectListEntries.append(entry)
+                    }
+                    
+                    completion(projectListEntries)
                 }
-                
             case let .failure(error):
                 print(error)
             }

@@ -12,10 +12,13 @@ class ProjectOverviewViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("view did load")
-        let pm = ProjectManager()
-        pm.getProjectsForUser(userid: TaigaSettings.getAuthenticatedUser()) { (projectListEntries) in
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        ProjectManager.instance.getProjectsForUser(userid: TaigaSettings.getAuthenticatedUser()) { (projectListEntries) in
+            for entry in projectListEntries {
+                print(entry.name)
+            }
         }
     }
 

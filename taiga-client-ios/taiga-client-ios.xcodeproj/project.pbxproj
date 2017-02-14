@@ -132,6 +132,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B44775CA1E5348360026C5A1 /* viewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				B4C2A4591E51B1DB000A92CF /* LoginViewController.swift */,
+				B44775C01E5322FC0026C5A1 /* ProjectOverviewViewController.swift */,
+			);
+			name = viewcontroller;
+			sourceTree = "<group>";
+		};
 		B45BBCF81E51D798009ECB5A /* service */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,13 +195,12 @@
 		B4C2A4561E51B1DB000A92CF /* taiga-client-ios */ = {
 			isa = PBXGroup;
 			children = (
+				B44775CA1E5348360026C5A1 /* viewcontroller */,
 				B480C1D31E51E8DD00A41AD1 /* model */,
 				B45BBCFB1E51DDF5009ECB5A /* helper */,
-				B4C2A4571E51B1DB000A92CF /* AppDelegate.swift */,
-				B4C2A4591E51B1DB000A92CF /* LoginViewController.swift */,
-				B44775C01E5322FC0026C5A1 /* ProjectOverviewViewController.swift */,
 				B45BBCF81E51D798009ECB5A /* service */,
 				B4C2A45B1E51B1DB000A92CF /* Main.storyboard */,
+				B4C2A4571E51B1DB000A92CF /* AppDelegate.swift */,
 				B4C2A4611E51B1DB000A92CF /* Assets.xcassets */,
 				B4C2A4631E51B1DB000A92CF /* LaunchScreen.storyboard */,
 				B4C2A4661E51B1DB000A92CF /* Info.plist */,
