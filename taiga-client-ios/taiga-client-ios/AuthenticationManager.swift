@@ -10,15 +10,21 @@ import Moya
 import SwiftyJSON
 
 class AuthenticationManager {
+    static let KEY_KEYCHAIN_AUTH_TOKEN = "keychainAuthToken"
+    
     static let provider = MoyaProvider<AuthenticationService>()
     
-    static func authenticateUser(username: String, password: String, completion: @escaping (_ userAuthenticationDetail: UserAuthenticationDetail) -> ()) {
+    static func authenticateUser(username: String, password: String, completion: @escaping (_ userAuthenticationDetail: UserAuthenticationDetail?) -> ()) {
         provider.request(.authenticateUser(username: username, password: password)) { result in
             switch result {
             case let .success(moyaResponse):
-                let json = JSON(data: (moyaResponse.data))
-                let userAuth = UserAuthenticationDetail(json: json)
-                completion(userAuth)
+                if moyaResponse.statusCode == 200 {
+                    let json = JSON(data: (moyaResponse.data))
+                    let userAuth = UserAuthenticationDetail(json: json)
+                    completion(userAuth)
+                } else {
+                    completion(nil)
+                }
             default:
                 print("Request failed")
             }

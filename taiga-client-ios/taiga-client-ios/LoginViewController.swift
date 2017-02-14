@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var textServer: UITextField!
@@ -33,7 +34,13 @@ class LoginViewController: UIViewController {
         }
         
         AuthenticationManager.authenticateUser(username: textUsername.text!, password: textPassword.text!) { (userAuthenticationDetail) in
-            print(userAuthenticationDetail.auth_token)
+            if let authDetails = userAuthenticationDetail {
+                let saveTokenSuccess = KeychainWrapper.standard.set(authDetails.auth_token, forKey: AuthenticationManager.KEY_KEYCHAIN_AUTH_TOKEN)
+                
+                if saveTokenSuccess {
+                    // Saved auth-token to keychain, finish login view
+                }
+            }
         }
     }
 }

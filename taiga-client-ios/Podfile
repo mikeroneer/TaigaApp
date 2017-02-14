@@ -8,6 +8,7 @@ target 'taiga-client-ios' do
   # Pods for taiga-client-ios
   pod 'Moya'
   pod 'SwiftyJSON'
+  pod 'SwiftKeychainWrapper'
 
   target 'taiga-client-iosTests' do
     inherit! :search_paths
