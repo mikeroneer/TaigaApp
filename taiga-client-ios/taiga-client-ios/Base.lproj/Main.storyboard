@@ -84,6 +84,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onLoginClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tbv-2s-ryj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -105,6 +108,11 @@
                             <constraint firstItem="dCm-F6-5HO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yEC-xY-rj4"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textPassword" destination="cyc-jF-Vir" id="z5A-x7-PmE"/>
+                        <outlet property="textServer" destination="h0e-ks-KiT" id="vG8-xO-mzu"/>
+                        <outlet property="textUsername" destination="ZLn-cp-Q0x" id="Bn5-3S-Vz0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
