@@ -15,6 +15,7 @@
 		B44775C51E5326CE0026C5A1 /* ProjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44775C41E5326CE0026C5A1 /* ProjectManager.swift */; };
 		B44775C71E5329BD0026C5A1 /* ProjectListEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44775C61E5329BD0026C5A1 /* ProjectListEntry.swift */; };
 		B44775C91E5339360026C5A1 /* TaigaAccessTokenPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44775C81E5339360026C5A1 /* TaigaAccessTokenPlugin.swift */; };
+		B44775CC1E545C3C0026C5A1 /* PaginationPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44775CB1E545C3C0026C5A1 /* PaginationPlugin.swift */; };
 		B45BBCFA1E51D7D7009ECB5A /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45BBCF91E51D7D7009ECB5A /* AuthenticationService.swift */; };
 		B45BBCFD1E51DE0C009ECB5A /* TaigaSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45BBCFC1E51DE0C009ECB5A /* TaigaSettings.swift */; };
 		B480C1D21E51E71600A41AD1 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480C1D11E51E71600A41AD1 /* AuthenticationManager.swift */; };
@@ -58,6 +59,7 @@
 		B44775C41E5326CE0026C5A1 /* ProjectManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectManager.swift; sourceTree = "<group>"; };
 		B44775C61E5329BD0026C5A1 /* ProjectListEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectListEntry.swift; sourceTree = "<group>"; };
 		B44775C81E5339360026C5A1 /* TaigaAccessTokenPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaigaAccessTokenPlugin.swift; sourceTree = "<group>"; };
+		B44775CB1E545C3C0026C5A1 /* PaginationPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginationPlugin.swift; sourceTree = "<group>"; };
 		B45BBCF91E51D7D7009ECB5A /* AuthenticationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		B45BBCFC1E51DE0C009ECB5A /* TaigaSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaigaSettings.swift; sourceTree = "<group>"; };
 		B480C1D11E51E71600A41AD1 /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			children = (
 				B45BBCFC1E51DE0C009ECB5A /* TaigaSettings.swift */,
 				B44775C81E5339360026C5A1 /* TaigaAccessTokenPlugin.swift */,
+				B44775CB1E545C3C0026C5A1 /* PaginationPlugin.swift */,
 			);
 			name = helper;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 			files = (
 				B4C2A45A1E51B1DB000A92CF /* LoginViewController.swift in Sources */,
 				B44775C71E5329BD0026C5A1 /* ProjectListEntry.swift in Sources */,
+				B44775CC1E545C3C0026C5A1 /* PaginationPlugin.swift in Sources */,
 				B4C2A4601E51B1DB000A92CF /* taiga_client_ios.xcdatamodeld in Sources */,
 				B45BBCFD1E51DE0C009ECB5A /* TaigaSettings.swift in Sources */,
 				B44775C11E5322FC0026C5A1 /* ProjectOverviewViewController.swift in Sources */,
