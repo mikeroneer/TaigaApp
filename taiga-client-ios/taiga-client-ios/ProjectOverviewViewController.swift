@@ -9,20 +9,44 @@
 import UIKit
 
 class ProjectOverviewViewController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var projects: [ProjectListEntry] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
         ProjectManager.instance.getProjectsForUser(userid: TaigaSettings.getAuthenticatedUser()) { (projectListEntries) in
-            for entry in projectListEntries {
-                print(entry.name)
-            }
+            self.projects = projectListEntries
+            self.tableView.reloadData()
         }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+}
+
+extension ProjectOverviewViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return projects.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "project_cell", for: indexPath)
+        
+        cell.textLabel?.text = projects[indexPath.row].name
+        
+        return cell
     }
 }
