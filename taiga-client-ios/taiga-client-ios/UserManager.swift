@@ -19,7 +19,7 @@ class UserManager {
         provider = MoyaProvider<UserService>(plugins: [authPlugin, PaginationPlugin(paginationEnabled: false), NetworkLoggerPlugin()])
     }
     
-    func getMe(userid: Int, completion: @escaping (_ userDetail: UserDetail) -> ()) {
+    func getMe(completion: @escaping (_ userDetail: UserDetail) -> ()) {
         provider.request(.getMe()) { result in
             switch result {
             case let .success(moyaResponse):
