@@ -24,6 +24,10 @@ class ProjectOverviewViewController: UIViewController {
         ProjectManager.instance.getProjectsForUser(userid: TaigaSettings.getAuthenticatedUser()) { (projectListEntries) in
             self.projects = projectListEntries
             self.tableView.reloadData()
+            for pro in self.projects {
+                print(pro.logo_small_url ?? "null")
+                print(pro.members)
+            }
         }
     }
 
@@ -46,7 +50,7 @@ extension ProjectOverviewViewController: UITableViewDelegate, UITableViewDataSou
         let cell = tableView.dequeueReusableCell(withIdentifier: "project_cell", for: indexPath)
         
         cell.textLabel?.text = projects[indexPath.row].name
-        
+
         return cell
     }
 }

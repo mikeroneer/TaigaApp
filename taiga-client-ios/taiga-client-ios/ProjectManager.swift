@@ -14,7 +14,7 @@ class ProjectManager {
     var provider: MoyaProvider<ProjectService>
     static let instance = ProjectManager()
     
-    init() {
+    private init() {
         let authPlugin = TaigaAccessTokenPlugin(token: KeychainWrapper.standard.string(forKey: AuthenticationManager.KEY_KEYCHAIN_AUTH_TOKEN)!)
         provider = MoyaProvider<ProjectService>(plugins: [authPlugin, PaginationPlugin(paginationEnabled: false), NetworkLoggerPlugin()])
     }

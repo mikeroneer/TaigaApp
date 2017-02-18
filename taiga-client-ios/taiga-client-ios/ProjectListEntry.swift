@@ -16,6 +16,7 @@ class ProjectListEntry {
     let is_private: Bool
     let total_activity_last_year: Int
     let members: [Int]
+    let logo_small_url: String?
     
     init(json: JSON) {
         id = json["id"].intValue
@@ -30,5 +31,6 @@ class ProjectListEntry {
             membersArray.append(member.intValue)
         }
         members = membersArray
+        logo_small_url = json["logo_small_url"].string
     }
 }

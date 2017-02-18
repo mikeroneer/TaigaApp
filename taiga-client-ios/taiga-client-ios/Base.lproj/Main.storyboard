@@ -112,7 +112,7 @@
                         <outlet property="textPassword" destination="cyc-jF-Vir" id="z5A-x7-PmE"/>
                         <outlet property="textServer" destination="h0e-ks-KiT" id="vG8-xO-mzu"/>
                         <outlet property="textUsername" destination="ZLn-cp-Q0x" id="Bn5-3S-Vz0"/>
-                        <segue destination="tEv-Ou-yH4" kind="show" identifier="loginSuccessfulSegue" id="X5v-QA-gxG"/>
+                        <segue destination="v7V-VC-DAv" kind="show" identifier="loginSuccessfulSegue" id="X5v-QA-gxG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -158,16 +158,37 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="r4Z-Qe-MnI" secondAttribute="trailing" id="2Je-hL-bnj"/>
-                            <constraint firstItem="r4Z-Qe-MnI" firstAttribute="top" secondItem="Guh-1R-EnL" secondAttribute="top" id="J7R-RX-N3W"/>
                             <constraint firstItem="r4Z-Qe-MnI" firstAttribute="leading" secondItem="Guh-1R-EnL" secondAttribute="leading" id="KUd-GD-QsU"/>
                             <constraint firstItem="4xt-Tx-rQX" firstAttribute="top" secondItem="r4Z-Qe-MnI" secondAttribute="bottom" id="MD2-sB-Xa6"/>
+                            <constraint firstItem="r4Z-Qe-MnI" firstAttribute="top" secondItem="Guh-1R-EnL" secondAttribute="top" id="zcO-o2-rVx"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Project Overview" id="55H-mg-Wfe">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Gtm-9r-lxE"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="r4Z-Qe-MnI" id="Wid-hZ-uBL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eK3-GY-FFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1836" y="36.431784107946029"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Hdh-34-hhM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v7V-VC-DAv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="In8-XG-53R">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tEv-Ou-yH4" kind="relationship" relationship="rootViewController" id="pVh-3c-92i"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yWp-Cx-6qz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="896.79999999999995" y="36.431784107946029"/>
         </scene>
