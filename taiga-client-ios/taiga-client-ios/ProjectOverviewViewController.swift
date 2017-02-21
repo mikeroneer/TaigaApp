@@ -18,6 +18,8 @@ class ProjectOverviewViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140
     }
     
     override func viewDidAppear(_ animated: Bool) {
