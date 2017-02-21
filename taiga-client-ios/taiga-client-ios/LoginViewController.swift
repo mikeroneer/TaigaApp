@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,9 +39,14 @@ class LoginViewController: UIViewController {
                 let saveTokenSuccess = KeychainWrapper.standard.set(authDetails.auth_token, forKey: AuthenticationManager.KEY_KEYCHAIN_AUTH_TOKEN)
                 
                 if saveTokenSuccess {
-                    // Saved auth-token to keychain, finish login view
+                    TaigaSettings.setAuthenticatedUser(value: authDetails.id)
+                    self.performSegue(withIdentifier: "loginSuccessfulSegue", sender: sender)
                 }
             }
         }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
