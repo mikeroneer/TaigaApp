@@ -26,15 +26,23 @@ class ProjectOverviewViewController: UIViewController {
         ProjectManager.instance.getProjectsForUser(userid: TaigaSettings.getAuthenticatedUser()) { (projectListEntries) in
             self.projects = projectListEntries
             self.tableView.reloadData()
-            for pro in self.projects {
-                print(pro.logo_small_url ?? "null")
-                print(pro.members)
-            }
         }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func onCreateProjectClick(_ sender: Any) {
+        let modelVC = self.storyboard?.instantiateViewController(withIdentifier: "PopoverCreateProjectViewController") as! PopoverCreateProjectViewController
+        let navBarOnModal: UINavigationController = UINavigationController(rootViewController: modelVC)
+        let btnBack = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(ProjectOverviewViewController.dismiss as (ProjectOverviewViewController) -> () -> ()))
+        navigationController?.topViewController?.navigationItem.leftBarButtonItem = btnBack
+        self.present(navBarOnModal, animated: true, completion: nil)
+    }
+    
+    func dismiss() {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -58,4 +66,5 @@ extension ProjectOverviewViewController: UITableViewDelegate, UITableViewDataSou
 
         return cell
     }
+    
 }
