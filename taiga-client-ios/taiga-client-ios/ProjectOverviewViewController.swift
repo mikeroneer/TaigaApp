@@ -50,8 +50,9 @@ extension ProjectOverviewViewController: UITableViewDelegate, UITableViewDataSou
         let cell = tableView.dequeueReusableCell(withIdentifier: "project_cell", for: indexPath) as! ProjectOverviewCell
         
         cell.lblProjectName.text = projects[indexPath.row].name
-        cell.lblMemberCount.text = "\(projects[indexPath.row].members.count) Members"
-        //cell.textLabel?.text = projects[indexPath.row].name
+        cell.lblProjectDescription.text = projects[indexPath.row].description
+        cell.lblProjectLikes.text = String(projects[indexPath.row].total_fans)
+        cell.lblProjectWatchers.text = String(projects[indexPath.row].total_watchers)
 
         return cell
     }

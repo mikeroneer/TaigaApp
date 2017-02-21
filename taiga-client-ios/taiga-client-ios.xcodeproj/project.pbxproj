@@ -15,6 +15,7 @@
 		B43EDA6B1E5856DB00FA1357 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43EDA6A1E5856DB00FA1357 /* UserManager.swift */; };
 		B43EDA6D1E5857D000FA1357 /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43EDA6C1E5857D000FA1357 /* UserDetail.swift */; };
 		B43EDA701E5C27AA00FA1357 /* ProjectOverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43EDA6F1E5C27AA00FA1357 /* ProjectOverviewCell.swift */; };
+		B43EDA721E5C645400FA1357 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43EDA711E5C645400FA1357 /* UIColor.swift */; };
 		B44775C11E5322FC0026C5A1 /* ProjectOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44775C01E5322FC0026C5A1 /* ProjectOverviewViewController.swift */; };
 		B44775C31E53242C0026C5A1 /* ProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44775C21E53242C0026C5A1 /* ProjectService.swift */; };
 		B44775C51E5326CE0026C5A1 /* ProjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44775C41E5326CE0026C5A1 /* ProjectManager.swift */; };
@@ -64,6 +65,7 @@
 		B43EDA6A1E5856DB00FA1357 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		B43EDA6C1E5857D000FA1357 /* UserDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
 		B43EDA6F1E5C27AA00FA1357 /* ProjectOverviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectOverviewCell.swift; sourceTree = "<group>"; };
+		B43EDA711E5C645400FA1357 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		B44775C01E5322FC0026C5A1 /* ProjectOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectOverviewViewController.swift; sourceTree = "<group>"; };
 		B44775C21E53242C0026C5A1 /* ProjectService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectService.swift; sourceTree = "<group>"; };
 		B44775C41E5326CE0026C5A1 /* ProjectManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectManager.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				B43EDA6F1E5C27AA00FA1357 /* ProjectOverviewCell.swift */,
+				B43EDA711E5C645400FA1357 /* UIColor.swift */,
 			);
 			name = ui;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				B44775C11E5322FC0026C5A1 /* ProjectOverviewViewController.swift in Sources */,
 				B43EDA6B1E5856DB00FA1357 /* UserManager.swift in Sources */,
 				B480C1D21E51E71600A41AD1 /* AuthenticationManager.swift in Sources */,
+				B43EDA721E5C645400FA1357 /* UIColor.swift in Sources */,
 				B4C2A4581E51B1DB000A92CF /* AppDelegate.swift in Sources */,
 				B480C1D51E51E8FB00A41AD1 /* UserAuthenticationDetail.swift in Sources */,
 				B43EDA701E5C27AA00FA1357 /* ProjectOverviewCell.swift in Sources */,

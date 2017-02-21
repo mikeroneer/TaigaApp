@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,5 +44,9 @@ class LoginViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }

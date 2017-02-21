@@ -10,5 +10,11 @@ import UIKit
 
 class ProjectOverviewCell: UITableViewCell {
     @IBOutlet weak var lblProjectName: UILabel!
-    @IBOutlet weak var lblMemberCount: UILabel!
+    
+    @IBOutlet weak var lblProjectDescription: UILabel!
+    @IBOutlet weak var lblProjectLikes: UILabel!
+    
+    @IBOutlet weak var lblProjectWatchers: UILabel!
+    
+    @IBOutlet weak var lblActivityLastWeek: UILabel!
 }
