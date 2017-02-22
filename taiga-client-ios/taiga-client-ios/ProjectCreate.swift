@@ -16,8 +16,9 @@ class ProjectCreate {
     let is_issues_activated: Bool
     let is_backlog_activated: Bool
     let is_wiki_activated: Bool
+    let is_private: Bool
     
-    init(name: String, description: String, is_kanban_activated: Bool, is_epics_activated: Bool,is_issues_activated: Bool, is_backlog_activated: Bool, is_wiki_activated: Bool) {
+    init(name: String, description: String, is_kanban_activated: Bool, is_epics_activated: Bool,is_issues_activated: Bool, is_backlog_activated: Bool, is_wiki_activated: Bool, is_private: Bool) {
         self.name = name
         self.description = description
         self.is_kanban_activated = is_kanban_activated
@@ -25,6 +26,7 @@ class ProjectCreate {
         self.is_issues_activated = is_issues_activated
         self.is_backlog_activated = is_backlog_activated
         self.is_wiki_activated = is_wiki_activated
+        self.is_private = is_private
     }
     
     func toJson() -> [String: Any]? {
@@ -35,7 +37,8 @@ class ProjectCreate {
            "is_epics_activated": is_epics_activated,
            "is_issues_activated": is_issues_activated,
            "is_backlog_activated": is_backlog_activated,
-           "is_wiki_activated": is_wiki_activated
+           "is_wiki_activated": is_wiki_activated,
+            "is_private": is_private
         ]
     }
 }

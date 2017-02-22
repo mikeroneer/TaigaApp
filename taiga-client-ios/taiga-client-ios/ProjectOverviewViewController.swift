@@ -21,8 +21,6 @@ class ProjectOverviewViewController: UIViewController {
         tableView.delegate = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 140
-        print("!!!!!!!!!!!")
-        print(KeychainWrapper.standard.string(forKey: AuthenticationManager.KEY_KEYCHAIN_AUTH_TOKEN)!)
     }
     
     override func viewDidAppear(_ animated: Bool) {
