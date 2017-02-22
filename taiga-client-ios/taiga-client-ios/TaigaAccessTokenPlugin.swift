@@ -24,7 +24,7 @@ public struct TaigaAccessTokenPlugin: PluginType {
     public let token: String
     
     private var authVal: String {
-        return "${".appending(token).appending("}")
+        return "Bearer ".appending(token)
     }
     
     /**

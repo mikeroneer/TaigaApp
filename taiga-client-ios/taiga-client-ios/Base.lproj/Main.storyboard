@@ -199,6 +199,9 @@
                                 <state key="normal" title="Create Project">
                                     <color key="titleColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                                 </state>
+                                <connections>
+                                    <action selector="createClick:" destination="d5d-Ne-YjC" eventType="touchUpInside" id="fIP-NZ-qga"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Project" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3p-t5-HX5">
                                 <rect key="frame" x="40" y="45" width="140" height="25.5"/>
@@ -215,6 +218,9 @@
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancelClick:" destination="d5d-Ne-YjC" eventType="touchUpInside" id="ZM0-3Q-5A9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -241,6 +247,12 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="220" height="375"/>
+                    <connections>
+                        <outlet property="segControlAccessibility" destination="4eF-fS-qaD" id="7v0-Uv-hMD"/>
+                        <outlet property="segControlTemplate" destination="7Pw-yi-bFN" id="RbK-4U-zJ4"/>
+                        <outlet property="textDescription" destination="zT2-lj-bP0" id="hHS-92-oI5"/>
+                        <outlet property="textName" destination="huE-eu-RbW" id="xR8-vc-bLt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I4R-Ot-fvB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -354,6 +366,9 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Gtm-9r-lxE">
                             <connections>
                                 <action selector="onCreateProjectClick:" destination="tEv-Ou-yH4" id="UPT-oz-iAH"/>
+                                <segue destination="d5d-Ne-YjC" kind="popoverPresentation" popoverAnchorBarButtonItem="Gtm-9r-lxE" id="v24-cb-Ccf">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

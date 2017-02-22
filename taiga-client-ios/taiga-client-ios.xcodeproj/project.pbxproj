@@ -18,6 +18,7 @@
 		B43EDA721E5C645400FA1357 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43EDA711E5C645400FA1357 /* UIColor.swift */; };
 		B43EDA761E5CAAB600FA1357 /* PopoverCreateProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43EDA751E5CAAB600FA1357 /* PopoverCreateProjectViewController.swift */; };
 		B43EDA791E5CC40A00FA1357 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B43EDA771E5CC40A00FA1357 /* Main.storyboard */; };
+		B43EDA7B1E5DA04E00FA1357 /* ProjectCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43EDA7A1E5DA04E00FA1357 /* ProjectCreate.swift */; };
 		B44775C11E5322FC0026C5A1 /* ProjectOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44775C01E5322FC0026C5A1 /* ProjectOverviewViewController.swift */; };
 		B44775C31E53242C0026C5A1 /* ProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44775C21E53242C0026C5A1 /* ProjectService.swift */; };
 		B44775C51E5326CE0026C5A1 /* ProjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44775C41E5326CE0026C5A1 /* ProjectManager.swift */; };
@@ -69,6 +70,7 @@
 		B43EDA711E5C645400FA1357 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		B43EDA751E5CAAB600FA1357 /* PopoverCreateProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverCreateProjectViewController.swift; sourceTree = "<group>"; };
 		B43EDA781E5CC40A00FA1357 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B43EDA7A1E5DA04E00FA1357 /* ProjectCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectCreate.swift; sourceTree = "<group>"; };
 		B44775C01E5322FC0026C5A1 /* ProjectOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectOverviewViewController.swift; sourceTree = "<group>"; };
 		B44775C21E53242C0026C5A1 /* ProjectService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectService.swift; sourceTree = "<group>"; };
 		B44775C41E5326CE0026C5A1 /* ProjectManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectManager.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				B44775C61E5329BD0026C5A1 /* ProjectListEntry.swift */,
 				B43EDA661E5852C000FA1357 /* ProjectDetail.swift */,
 				B43EDA6C1E5857D000FA1357 /* UserDetail.swift */,
+				B43EDA7A1E5DA04E00FA1357 /* ProjectCreate.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				B45BBCFD1E51DE0C009ECB5A /* TaigaSettings.swift in Sources */,
 				B44775C11E5322FC0026C5A1 /* ProjectOverviewViewController.swift in Sources */,
 				B43EDA6B1E5856DB00FA1357 /* UserManager.swift in Sources */,
+				B43EDA7B1E5DA04E00FA1357 /* ProjectCreate.swift in Sources */,
 				B480C1D21E51E71600A41AD1 /* AuthenticationManager.swift in Sources */,
 				B43EDA721E5C645400FA1357 /* UIColor.swift in Sources */,
 				B4C2A4581E51B1DB000A92CF /* AppDelegate.swift in Sources */,

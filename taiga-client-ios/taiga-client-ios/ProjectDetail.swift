@@ -6,4 +6,11 @@
 //  Copyright © 2017 r31r0c. All rights reserved.
 //
 
-import Foundation
+import SwiftyJSON
+
+class ProjectDetail {
+
+    init(json: JSON) {
+        
+    }
+}

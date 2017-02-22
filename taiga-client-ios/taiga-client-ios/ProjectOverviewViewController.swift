@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class ProjectOverviewViewController: UIViewController {
     
@@ -20,6 +21,8 @@ class ProjectOverviewViewController: UIViewController {
         tableView.delegate = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 140
+        print("!!!!!!!!!!!")
+        print(KeychainWrapper.standard.string(forKey: AuthenticationManager.KEY_KEYCHAIN_AUTH_TOKEN)!)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -31,18 +34,6 @@ class ProjectOverviewViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    @IBAction func onCreateProjectClick(_ sender: Any) {
-        let modelVC = self.storyboard?.instantiateViewController(withIdentifier: "PopoverCreateProjectViewController") as! PopoverCreateProjectViewController
-        let navBarOnModal: UINavigationController = UINavigationController(rootViewController: modelVC)
-        let btnBack = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(ProjectOverviewViewController.dismiss as (ProjectOverviewViewController) -> () -> ()))
-        navigationController?.topViewController?.navigationItem.leftBarButtonItem = btnBack
-        self.present(navBarOnModal, animated: true, completion: nil)
-    }
-    
-    func dismiss() {
-        self.dismiss(animated: true, completion: nil)
     }
 }
 
