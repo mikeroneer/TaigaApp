@@ -120,6 +120,144 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
         </scene>
+        <!--Create Project-->
+        <scene sceneID="4vj-RH-sBN">
+            <objects>
+                <viewController storyboardIdentifier="PopoverCreateProjectViewController" title="Create Project" id="d5d-Ne-YjC" customClass="PopoverCreateProjectViewController" customModule="taiga_client_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ecc-Yi-kIr"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Xs-1H-CSO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="euL-Cd-rUC">
+                        <rect key="frame" x="0.0" y="0.0" width="220" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7Pw-yi-bFN">
+                                <rect key="frame" x="10" y="103.5" width="200" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="9e7-22-nfH"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="SCRUM"/>
+                                    <segment title="KANBAN"/>
+                                </segments>
+                                <color key="tintColor" red="0.61568627450000002" green="0.80784313730000001" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which template fits best?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZZ-t9-tQL">
+                                <rect key="frame" x="10" y="77" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="NWd-KS-bYC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMe-TM-z0t">
+                                <rect key="frame" x="10" y="147" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="oLC-Du-VPw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4eF-fS-qaD">
+                                <rect key="frame" x="10" y="253.5" width="200" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="5cI-yU-dTP"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="PUBLIC"/>
+                                    <segment title="PRIVATE"/>
+                                </segments>
+                                <color key="tintColor" red="0.61568627450000002" green="0.80784313730000001" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="huE-eu-RbW">
+                                <rect key="frame" x="10" y="172.5" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Y5y-mV-IIj"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zT2-lj-bP0">
+                                <rect key="frame" x="10" y="212.5" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="raP-Qa-CpT"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yc-YI-YnM">
+                                <rect key="frame" x="10" y="292.5" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.35686274509999999" green="0.50980392159999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="KFr-aN-ftp"/>
+                                </constraints>
+                                <state key="normal" title="Create Project">
+                                    <color key="titleColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
+                                </state>
+                                <connections>
+                                    <action selector="createClick:" destination="d5d-Ne-YjC" eventType="touchUpInside" id="fIP-NZ-qga"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Project" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3p-t5-HX5">
+                                <rect key="frame" x="40" y="45" width="140" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <color key="textColor" red="0.35686274509999999" green="0.50980392159999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUv-Lf-fiX">
+                                <rect key="frame" x="10" y="332.5" width="200" height="30"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="EQ9-y5-Yuo"/>
+                                </constraints>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelClick:" destination="d5d-Ne-YjC" eventType="touchUpInside" id="ZM0-3Q-5A9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7Pw-yi-bFN" firstAttribute="centerY" secondItem="euL-Cd-rUC" secondAttribute="centerY" constant="-70" id="2hu-um-uvO"/>
+                            <constraint firstItem="iUv-Lf-fiX" firstAttribute="centerX" secondItem="euL-Cd-rUC" secondAttribute="centerX" id="3UW-aq-t68"/>
+                            <constraint firstItem="R3p-t5-HX5" firstAttribute="centerX" secondItem="euL-Cd-rUC" secondAttribute="centerX" id="BqH-uh-ZGR"/>
+                            <constraint firstItem="zT2-lj-bP0" firstAttribute="centerX" secondItem="euL-Cd-rUC" secondAttribute="centerX" id="D0x-0p-qll"/>
+                            <constraint firstItem="8yc-YI-YnM" firstAttribute="centerY" secondItem="euL-Cd-rUC" secondAttribute="centerY" constant="120" id="DES-2U-qfb"/>
+                            <constraint firstItem="huE-eu-RbW" firstAttribute="centerX" secondItem="euL-Cd-rUC" secondAttribute="centerX" id="Fzh-cM-3Oh"/>
+                            <constraint firstItem="zT2-lj-bP0" firstAttribute="centerY" secondItem="euL-Cd-rUC" secondAttribute="centerY" constant="40" id="Jav-T8-voc"/>
+                            <constraint firstItem="iUv-Lf-fiX" firstAttribute="centerY" secondItem="euL-Cd-rUC" secondAttribute="centerY" constant="160" id="TGC-K3-Kqu"/>
+                            <constraint firstItem="MMe-TM-z0t" firstAttribute="centerY" secondItem="euL-Cd-rUC" secondAttribute="centerY" constant="-30" id="UNh-px-oiz"/>
+                            <constraint firstItem="MMe-TM-z0t" firstAttribute="centerX" secondItem="euL-Cd-rUC" secondAttribute="centerX" id="ZJB-tG-BJn"/>
+                            <constraint firstItem="8yc-YI-YnM" firstAttribute="centerX" secondItem="euL-Cd-rUC" secondAttribute="centerX" id="cX4-x2-Gwd"/>
+                            <constraint firstItem="7Pw-yi-bFN" firstAttribute="centerX" secondItem="euL-Cd-rUC" secondAttribute="centerX" id="kNW-Ou-pH7"/>
+                            <constraint firstItem="R3p-t5-HX5" firstAttribute="centerY" secondItem="euL-Cd-rUC" secondAttribute="centerY" constant="-130" id="lDx-XD-jft"/>
+                            <constraint firstItem="4eF-fS-qaD" firstAttribute="centerY" secondItem="euL-Cd-rUC" secondAttribute="centerY" constant="80" id="nEe-Uy-1qG"/>
+                            <constraint firstItem="0ZZ-t9-tQL" firstAttribute="centerX" secondItem="euL-Cd-rUC" secondAttribute="centerX" id="neI-KM-yYW"/>
+                            <constraint firstItem="0ZZ-t9-tQL" firstAttribute="centerY" secondItem="euL-Cd-rUC" secondAttribute="centerY" constant="-100" id="o8H-k1-rW8"/>
+                            <constraint firstItem="4eF-fS-qaD" firstAttribute="centerX" secondItem="euL-Cd-rUC" secondAttribute="centerX" id="yP8-ZN-vZk"/>
+                            <constraint firstItem="huE-eu-RbW" firstAttribute="centerY" secondItem="euL-Cd-rUC" secondAttribute="centerY" id="yZN-Vm-iNl"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="220" height="375"/>
+                    <connections>
+                        <outlet property="segControlAccessibility" destination="4eF-fS-qaD" id="7v0-Uv-hMD"/>
+                        <outlet property="segControlTemplate" destination="7Pw-yi-bFN" id="RbK-4U-zJ4"/>
+                        <outlet property="textDescription" destination="zT2-lj-bP0" id="hHS-92-oI5"/>
+                        <outlet property="textName" destination="huE-eu-RbW" id="xR8-vc-bLt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I4R-Ot-fvB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1836" y="-636.4317841079461"/>
+        </scene>
         <!--ProjectOverview-->
         <scene sceneID="TM5-dM-3na">
             <objects>
@@ -225,7 +363,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Project Overview" id="55H-mg-Wfe">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Gtm-9r-lxE"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Gtm-9r-lxE">
+                            <connections>
+                                <action selector="onCreateProjectClick:" destination="tEv-Ou-yH4" id="UPT-oz-iAH"/>
+                                <segue destination="d5d-Ne-YjC" kind="popoverPresentation" popoverAnchorBarButtonItem="Gtm-9r-lxE" id="v24-cb-Ccf">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="r4Z-Qe-MnI" id="Wid-hZ-uBL"/>

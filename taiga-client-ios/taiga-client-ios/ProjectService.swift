@@ -10,6 +10,7 @@ import Moya
 
 enum ProjectService {
     case getProjectsForUser(userid: Int)
+    case createProject(project: ProjectCreate)
 }
 
 extension ProjectService : TargetType {
@@ -19,8 +20,9 @@ extension ProjectService : TargetType {
     
     var path: String {
         switch self {
-        case .getProjectsForUser:
+        case .getProjectsForUser, .createProject:
             return "/projects"
+            
         }
     }
     
@@ -28,6 +30,8 @@ extension ProjectService : TargetType {
         switch self {
         case .getProjectsForUser:
             return .get
+        case .createProject:
+            return .post
         }
     }
     
@@ -35,6 +39,8 @@ extension ProjectService : TargetType {
         switch self {
         case .getProjectsForUser(let userid):
             return ["member" : userid]
+        case .createProject(let project):
+            return project.toJson()
         }
     }
     
@@ -42,6 +48,8 @@ extension ProjectService : TargetType {
         switch self {
         case .getProjectsForUser:
             return URLEncoding.default
+        case .createProject:
+            return JSONEncoding.default
         }
     }
     
@@ -54,14 +62,14 @@ extension ProjectService : TargetType {
     
     var task: Task {
         switch self {
-        case .getProjectsForUser:
+        case .getProjectsForUser, .createProject:
             return .request
         }
     }
     
     var validate: Bool {
         switch self {
-        case .getProjectsForUser:
+        case .getProjectsForUser, .createProject:
             return true
         }
     }

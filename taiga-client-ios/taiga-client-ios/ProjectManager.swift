@@ -39,4 +39,22 @@ class ProjectManager {
             }
         }
     }
+    
+    func createProject(project: ProjectCreate, completion: @escaping (_ projectDetails: ProjectDetail?) ->()) {
+        provider.request(.createProject(project: project)) { result in
+            switch result {
+            case let .success(moyaResponse):
+                let json = JSON(data: moyaResponse.data)
+                let projectDetails = ProjectDetail(json: json)
+                if moyaResponse.statusCode == 201 {
+                    completion(projectDetails)
+                } else {
+                    completion(nil)
+                }
+            case let .failure(error):
+                print(error)
+                completion(nil)
+            }
+        }
+    }
 }

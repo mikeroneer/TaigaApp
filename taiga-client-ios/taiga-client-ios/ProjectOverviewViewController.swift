@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class ProjectOverviewViewController: UIViewController {
     
@@ -26,10 +27,6 @@ class ProjectOverviewViewController: UIViewController {
         ProjectManager.instance.getProjectsForUser(userid: TaigaSettings.getAuthenticatedUser()) { (projectListEntries) in
             self.projects = projectListEntries
             self.tableView.reloadData()
-            for pro in self.projects {
-                print(pro.logo_small_url ?? "null")
-                print(pro.members)
-            }
         }
     }
 
@@ -58,4 +55,5 @@ extension ProjectOverviewViewController: UITableViewDelegate, UITableViewDataSou
 
         return cell
     }
+    
 }
