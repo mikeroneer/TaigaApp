@@ -8,11 +8,13 @@ PODS:
   - Result (3.1.0)
   - SwiftKeychainWrapper (3.0.1)
   - SwiftyJSON (3.1.4)
+  - Toast-Swift (2.0.0)
 
 DEPENDENCIES:
   - Moya
   - SwiftKeychainWrapper
   - SwiftyJSON
+  - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
@@ -20,7 +22,8 @@ SPEC CHECKSUMS:
   Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  Toast-Swift: 5b2f8f720f7e78e48511f693df1f9c9a6e38a25a
 
-PODFILE CHECKSUM: 5151b0892824c0d171283f826d929f38fce62544
+PODFILE CHECKSUM: 386f135fea7879edfba62f45176f2b45be29d9d7
 
 COCOAPODS: 1.2.0

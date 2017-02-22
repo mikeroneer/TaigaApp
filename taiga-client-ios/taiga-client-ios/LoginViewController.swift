@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftKeychainWrapper
+import Toast_Swift
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var textServer: UITextField!
@@ -42,6 +43,8 @@ class LoginViewController: UIViewController {
                     TaigaSettings.setAuthenticatedUser(value: authDetails.id)
                     self.performSegue(withIdentifier: "loginSuccessfulSegue", sender: sender)
                 }
+            } else {
+                self.view.makeToast("Login failed")
             }
         }
     }

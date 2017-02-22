@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class PopoverCreateProjectViewController: UIViewController {
     
@@ -25,6 +26,7 @@ class PopoverCreateProjectViewController: UIViewController {
     
     @IBAction func createClick(_ sender: Any) {
         if !isInputValid() {
+            self.view.makeToast("Name and description necessary!")
             return
         }
         
