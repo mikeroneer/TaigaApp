@@ -33,4 +33,6 @@ class TaigaSettings {
     class func setAuthenticatedUser(value: Int) {
         UserDefaults.standard.set(value, forKey: KEY_AUTHENTICATED_USER)
     }
+    
+    static var SELECTED_PROJECT_ID: Int = 0
 }
