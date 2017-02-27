@@ -595,7 +595,7 @@
                             <outlet property="delegate" destination="SSg-48-mGh" id="ALN-Sb-qHr"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="More" id="dMM-Yi-qim"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="dMM-Yi-qim"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lcg-LX-Cj0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
