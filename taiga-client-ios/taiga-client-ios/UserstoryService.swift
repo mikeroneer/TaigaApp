@@ -20,7 +20,6 @@ extension UserstoryService: TargetType {
     var path: String {
         switch self {
         case .getUserstoriesOfProject:
-            //return "/userstories/\(userid)"
             return "/userstories"
         }
     }
