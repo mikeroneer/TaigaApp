@@ -1,8 +1,8 @@
 //
-//  UserstoryManager.swift
+//  IssueManager.swift
 //  taiga-client-ios
 //
-//  Created by Michael Rockenschaub on 27/02/2017.
+//  Created by Michael Rockenschaub on 28/02/2017.
 //  Copyright © 2017 r31r0c. All rights reserved.
 //
 
@@ -10,8 +10,8 @@ import Moya
 import SwiftyJSON
 import SwiftKeychainWrapper
 
-class UserstoryManager {
-    static let instance = UserstoryManager()
+class IssueManager {
+    static let instance = IssueManager()
     
     var provider: MoyaProvider<UserstoryService>
     
@@ -20,20 +20,20 @@ class UserstoryManager {
         provider = MoyaProvider<UserstoryService>(plugins: [authPlugin, PaginationPlugin(paginationEnabled: false), NetworkLoggerPlugin()])
     }
     
-    func getUserstoresOfProject(projectId: Int, completion: @escaping (_ userStoryDetails: [UserStoryDetail]) -> ()) {
-        provider.request(.getUserstoriesOfProject(projectId: projectId)) { result in
+    func getIssuesOfProject(projectId: Int, completion: @escaping (_ issueDetails: [IssueDetail]) -> ()) {
+        provider.request(.getIssuesOfProject(projectId: projectId)) { result in
             switch result {
             case let .success(moyaResponse):
                 if moyaResponse.statusCode == 200 {
                     let json = JSON(data: (moyaResponse.data))
-                    var userStoryDetails: [UserStoryDetail] = []
+                    var issueDetails: [IssueDetail] = []
                     
-                    for userStoryJson in json.arrayValue {
-                        let entry = UserStoryDetail(json: userStoryJson)
-                        userStoryDetails.append(entry)
+                    for issueJson in json.arrayValue {
+                        let entry = IssueDetail(json: issueJson)
+                        issueDetails.append(entry)
                     }
                     
-                    completion(userStoryDetails)
+                    completion(issueDetails)
                 }
             case let .failure(error):
                 print(error)
