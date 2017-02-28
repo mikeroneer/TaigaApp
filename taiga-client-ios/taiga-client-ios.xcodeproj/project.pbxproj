@@ -158,6 +158,26 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		2AB83C111E65755100D3367E /* post */ = {
+			isa = PBXGroup;
+			children = (
+				B43EDA7A1E5DA04E00FA1357 /* ProjectCreate.swift */,
+			);
+			name = post;
+			sourceTree = "<group>";
+		};
+		2AB83C121E6575BB00D3367E /* taiga-models */ = {
+			isa = PBXGroup;
+			children = (
+				B480C1D41E51E8FB00A41AD1 /* UserAuthenticationDetail.swift */,
+				B44775C61E5329BD0026C5A1 /* ProjectListEntry.swift */,
+				B43EDA661E5852C000FA1357 /* ProjectDetail.swift */,
+				B43EDA6C1E5857D000FA1357 /* UserDetail.swift */,
+				2A876A971E64BD0D008CF223 /* UserStoryDetail.swift */,
+			);
+			name = "taiga-models";
+			sourceTree = "<group>";
+		};
 		B43EDA6E1E5C279300FA1357 /* ui */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,12 +226,8 @@
 		B480C1D31E51E8DD00A41AD1 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				B480C1D41E51E8FB00A41AD1 /* UserAuthenticationDetail.swift */,
-				B44775C61E5329BD0026C5A1 /* ProjectListEntry.swift */,
-				B43EDA661E5852C000FA1357 /* ProjectDetail.swift */,
-				B43EDA6C1E5857D000FA1357 /* UserDetail.swift */,
-				B43EDA7A1E5DA04E00FA1357 /* ProjectCreate.swift */,
-				2A876A971E64BD0D008CF223 /* UserStoryDetail.swift */,
+				2AB83C121E6575BB00D3367E /* taiga-models */,
+				2AB83C111E65755100D3367E /* post */,
 			);
 			name = model;
 			sourceTree = "<group>";

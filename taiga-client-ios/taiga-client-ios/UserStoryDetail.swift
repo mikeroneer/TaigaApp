@@ -10,10 +10,14 @@ import SwiftyJSON
 
 class UserStoryDetail {
     let id: Int
+    let ref: Int
     let subject: String
+    let assigned_to: String
     
     init(json: JSON) {
         id = json["id"].intValue
         subject = json["subject"].stringValue
+        ref = json["ref"].intValue
+        assigned_to = json["assigned_to"].stringValue
     }
 }
