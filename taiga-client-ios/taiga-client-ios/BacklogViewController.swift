@@ -45,7 +45,7 @@ extension BacklogViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userstory_cell", for: indexPath)
         
-        cell.textLabel?.text = userStories[indexPath.row].subject
+        cell.textLabel?.text = "#\(userStories[indexPath.row].ref) \(userStories[indexPath.row].subject)"
         
         return cell
     }
