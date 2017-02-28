@@ -56,4 +56,8 @@ extension ProjectOverviewViewController: UITableViewDelegate, UITableViewDataSou
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let projectId = projects[indexPath.row].id
+        TaigaSettings.SELECTED_PROJECT_ID = projectId
+    }
 }

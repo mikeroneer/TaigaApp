@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A876A901E64B8CD008CF223 /* UserstoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A876A8F1E64B8CD008CF223 /* UserstoryService.swift */; };
+		2A876A921E64BB19008CF223 /* UserstoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A876A911E64BB19008CF223 /* UserstoryManager.swift */; };
+		2A876A961E64BC9C008CF223 /* BacklogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A876A951E64BC9C008CF223 /* BacklogViewController.swift */; };
+		2A876A981E64BD0D008CF223 /* UserStoryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A876A971E64BD0D008CF223 /* UserStoryDetail.swift */; };
 		46F17142EE1B6484F358A328 /* Pods_taiga_client_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 581DDF2247ABEBD787A48550 /* Pods_taiga_client_ios.framework */; };
 		8512B89B9D81F96A1ACA1D77 /* Pods_taiga_client_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C060362E422E02D104C7C1 /* Pods_taiga_client_iosUITests.framework */; };
 		A93F261788B83805DA03D42A /* Pods_taiga_client_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427F40F9042C684B9F59147 /* Pods_taiga_client_iosTests.framework */; };
@@ -56,6 +60,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A876A8F1E64B8CD008CF223 /* UserstoryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserstoryService.swift; sourceTree = "<group>"; };
+		2A876A911E64BB19008CF223 /* UserstoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserstoryManager.swift; sourceTree = "<group>"; };
+		2A876A951E64BC9C008CF223 /* BacklogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BacklogViewController.swift; sourceTree = "<group>"; };
+		2A876A971E64BD0D008CF223 /* UserStoryDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStoryDetail.swift; sourceTree = "<group>"; };
 		3C4BA92FB7FD1097D32DBBDA /* Pods-taiga-client-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-taiga-client-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-taiga-client-ios/Pods-taiga-client-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		581DDF2247ABEBD787A48550 /* Pods_taiga_client_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_taiga_client_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C060362E422E02D104C7C1 /* Pods_taiga_client_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_taiga_client_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +158,26 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		2AB83C111E65755100D3367E /* post */ = {
+			isa = PBXGroup;
+			children = (
+				B43EDA7A1E5DA04E00FA1357 /* ProjectCreate.swift */,
+			);
+			name = post;
+			sourceTree = "<group>";
+		};
+		2AB83C121E6575BB00D3367E /* taiga-models */ = {
+			isa = PBXGroup;
+			children = (
+				B480C1D41E51E8FB00A41AD1 /* UserAuthenticationDetail.swift */,
+				B44775C61E5329BD0026C5A1 /* ProjectListEntry.swift */,
+				B43EDA661E5852C000FA1357 /* ProjectDetail.swift */,
+				B43EDA6C1E5857D000FA1357 /* UserDetail.swift */,
+				2A876A971E64BD0D008CF223 /* UserStoryDetail.swift */,
+			);
+			name = "taiga-models";
+			sourceTree = "<group>";
+		};
 		B43EDA6E1E5C279300FA1357 /* ui */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +193,7 @@
 				B4C2A4591E51B1DB000A92CF /* LoginViewController.swift */,
 				B44775C01E5322FC0026C5A1 /* ProjectOverviewViewController.swift */,
 				B43EDA751E5CAAB600FA1357 /* PopoverCreateProjectViewController.swift */,
+				2A876A951E64BC9C008CF223 /* BacklogViewController.swift */,
 			);
 			name = viewcontroller;
 			sourceTree = "<group>";
@@ -178,6 +207,8 @@
 				B44775C41E5326CE0026C5A1 /* ProjectManager.swift */,
 				B43EDA681E58550400FA1357 /* UserService.swift */,
 				B43EDA6A1E5856DB00FA1357 /* UserManager.swift */,
+				2A876A8F1E64B8CD008CF223 /* UserstoryService.swift */,
+				2A876A911E64BB19008CF223 /* UserstoryManager.swift */,
 			);
 			name = service;
 			sourceTree = "<group>";
@@ -195,11 +226,8 @@
 		B480C1D31E51E8DD00A41AD1 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				B480C1D41E51E8FB00A41AD1 /* UserAuthenticationDetail.swift */,
-				B44775C61E5329BD0026C5A1 /* ProjectListEntry.swift */,
-				B43EDA661E5852C000FA1357 /* ProjectDetail.swift */,
-				B43EDA6C1E5857D000FA1357 /* UserDetail.swift */,
-				B43EDA7A1E5DA04E00FA1357 /* ProjectCreate.swift */,
+				2AB83C121E6575BB00D3367E /* taiga-models */,
+				2AB83C111E65755100D3367E /* post */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -543,11 +571,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A876A961E64BC9C008CF223 /* BacklogViewController.swift in Sources */,
 				B4C2A45A1E51B1DB000A92CF /* LoginViewController.swift in Sources */,
+				2A876A921E64BB19008CF223 /* UserstoryManager.swift in Sources */,
 				B44775C71E5329BD0026C5A1 /* ProjectListEntry.swift in Sources */,
 				B44775CC1E545C3C0026C5A1 /* PaginationPlugin.swift in Sources */,
 				B4C2A4601E51B1DB000A92CF /* taiga_client_ios.xcdatamodeld in Sources */,
+				2A876A901E64B8CD008CF223 /* UserstoryService.swift in Sources */,
 				B43EDA761E5CAAB600FA1357 /* PopoverCreateProjectViewController.swift in Sources */,
+				2A876A981E64BD0D008CF223 /* UserStoryDetail.swift in Sources */,
 				B45BBCFD1E51DE0C009ECB5A /* TaigaSettings.swift in Sources */,
 				B44775C11E5322FC0026C5A1 /* ProjectOverviewViewController.swift in Sources */,
 				B43EDA6B1E5856DB00FA1357 /* UserManager.swift in Sources */,

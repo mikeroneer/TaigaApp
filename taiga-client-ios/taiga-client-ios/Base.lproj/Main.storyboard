@@ -261,7 +261,7 @@
         <!--Backlog-->
         <scene sceneID="t7Q-ge-k7K">
             <objects>
-                <viewController title="Backlog" id="5aA-Qz-dTR" sceneMemberID="viewController">
+                <viewController title="Backlog" id="5aA-Qz-dTR" customClass="BacklogViewController" customModule="taiga_client_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="R7Z-CT-0K4"/>
                         <viewControllerLayoutGuide type="bottom" id="kI7-iO-rRL"/>
@@ -296,14 +296,32 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6zs-AB-Bi2">
+                                <rect key="frame" x="0.0" y="108" width="375" height="510"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userstory_cell" id="97K-2g-Lyz">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="97K-2g-Lyz" id="FuK-TA-cAY">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Backlog" id="nLs-PM-fbr"/>
+                    <connections>
+                        <outlet property="userStoriesTableView" destination="6zs-AB-Bi2" id="yxe-m4-nnL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8a-tD-Jov" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3825" y="-444"/>
+            <point key="canvasLocation" x="3824.8000000000002" y="-444.82758620689657"/>
         </scene>
         <!--Timeline-->
         <scene sceneID="QUO-p4-Fgd">
