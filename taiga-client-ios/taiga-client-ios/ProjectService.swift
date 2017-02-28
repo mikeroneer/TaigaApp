@@ -22,7 +22,6 @@ extension ProjectService : TargetType {
         switch self {
         case .getProjectsForUser, .createProject:
             return "/projects"
-            
         }
     }
     

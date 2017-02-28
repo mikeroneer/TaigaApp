@@ -326,7 +326,7 @@
         <!--Timeline-->
         <scene sceneID="QUO-p4-Fgd">
             <objects>
-                <viewController title="Timeline" id="lhf-SW-lTR" sceneMemberID="viewController">
+                <viewController title="Timeline" id="lhf-SW-lTR" customClass="TimelineViewController" customModule="taiga_client_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ADb-Wm-w5Y"/>
                         <viewControllerLayoutGuide type="bottom" id="5It-OO-IYe"/>
@@ -354,6 +354,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Timeline" id="aRg-V6-8fA"/>
+                    <connections>
+                        <outlet property="tableView" destination="uaa-G3-Cuq" id="Ror-x9-OCM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3zg-oc-cMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
