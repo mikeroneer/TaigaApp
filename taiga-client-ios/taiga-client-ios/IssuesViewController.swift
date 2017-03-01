@@ -18,6 +18,8 @@ class IssuesViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -43,9 +45,18 @@ extension IssuesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "issue_cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "issue_cell", for: indexPath) as! IssueOverviewCell
         
-        cell.textLabel?.text = "#\(issues[indexPath.row].ref) \(issues[indexPath.row].subject)"
+        cell.lblIssueName.text = "#\(issues[indexPath.row].ref) \(issues[indexPath.row].subject)"
+        
+        if let assignedTo = issues[indexPath.row].assigned_to_extra_info {
+            cell.lblAssignedTo.text = assignedTo.full_name_display
+        } else {
+            cell.lblAssignedTo.text = "not assigned"
+        }
+        
+        cell.lblStatus.text = issues[indexPath.row].status_extra_info.name
+        cell.lblStatus.textColor = UIColor(hexString: issues[indexPath.row].status_extra_info.color)
         
         return cell
     }
