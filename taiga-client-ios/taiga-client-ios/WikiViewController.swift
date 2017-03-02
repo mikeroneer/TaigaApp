@@ -28,6 +28,17 @@ class WikiViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let index = self.tableView.indexPathForSelectedRow
+        
+        if segue.identifier == "segueWikiDetail" {
+            if let wikiDetailsVC = segue.destination as? WikiDetailsViewController, let idx = index {
+                wikiDetailsVC.wikiTitle = wikiLinks[idx.row].title
+                wikiDetailsVC.wikiPageId = wikiLinks[idx.row].id
+            }
+        }
+    }
 }
 
 extension WikiViewController: UITableViewDelegate, UITableViewDataSource {

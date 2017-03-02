@@ -15,12 +15,14 @@ class IssueDetailsViewController: UIViewController {
     @IBOutlet weak var textDescription: UITextView!
     @IBOutlet weak var lblStatus: UILabel!
     @IBOutlet weak var lblAssignedTo: UILabel!
+    @IBOutlet weak var constraintTextDescriptionHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         IssueManager.instance.getDetailsOfIssue(issueId: issueId) { issueDetail in
             self.lblName.text = issueDetail.subject
             self.textDescription.text = issueDetail.description
+            self.constraintTextDescriptionHeight.constant = self.textDescription.intrinsicContentSize.height
             self.lblStatus.text = issueDetail.status_extra_info.name
             self.lblStatus.textColor = UIColor(hexString: issueDetail.status_extra_info.color)
             self.lblAssignedTo.text = issueDetail.assigned_to_extra_info?.full_name_display

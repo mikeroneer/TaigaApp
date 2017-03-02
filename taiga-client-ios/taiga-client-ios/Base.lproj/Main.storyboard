@@ -393,7 +393,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="CPJ-HE-ame" kind="show" id="A1T-SS-25Y"/>
+                                            <segue destination="CPJ-HE-ame" kind="show" identifier="segueWikiDetail" id="A1T-SS-25Y"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -427,12 +427,40 @@
                     <view key="view" contentMode="scaleToFill" id="FdL-th-v3F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23h-19-2CX">
+                                <rect key="frame" x="16" y="72" width="343" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Lbu-8P-Tml">
+                                <rect key="frame" x="16" y="109" width="343" height="501"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lbu-8P-Tml" firstAttribute="trailing" secondItem="FdL-th-v3F" secondAttribute="trailingMargin" id="358-4h-9k4"/>
+                            <constraint firstAttribute="trailing" secondItem="23h-19-2CX" secondAttribute="trailing" constant="16" id="5iH-ne-XaX"/>
+                            <constraint firstItem="Lbu-8P-Tml" firstAttribute="leading" secondItem="FdL-th-v3F" secondAttribute="leadingMargin" id="95s-yg-Hq8"/>
+                            <constraint firstItem="23h-19-2CX" firstAttribute="top" secondItem="l8V-Td-IFx" secondAttribute="bottom" constant="8" id="NzH-UN-vg3"/>
+                            <constraint firstItem="23h-19-2CX" firstAttribute="leading" secondItem="FdL-th-v3F" secondAttribute="leading" constant="16" id="bQy-Nh-TeX"/>
+                            <constraint firstItem="3jl-hj-14Z" firstAttribute="top" secondItem="Lbu-8P-Tml" secondAttribute="bottom" constant="8" id="cEg-Kt-Fmz"/>
+                            <constraint firstItem="Lbu-8P-Tml" firstAttribute="top" secondItem="23h-19-2CX" secondAttribute="bottom" constant="8" id="huF-J9-LZc"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lblTitle" destination="23h-19-2CX" id="rsH-9e-jJ1"/>
+                        <outlet property="lblcontent" destination="Lbu-8P-Tml" id="VcY-jf-GvO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a7d-3H-zUR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4689" y="516"/>
+            <point key="canvasLocation" x="4688.8000000000002" y="515.8920539730135"/>
         </scene>
         <!--Story Details-->
         <scene sceneID="mCE-7c-KI0">
@@ -550,18 +578,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#7 Issuename" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPj-K4-Wih">
-                                <rect key="frame" x="16" y="79" width="690" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#7 Issuename" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPj-K4-Wih">
+                                <rect key="frame" x="16" y="80" width="343" height="27.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="lblIssueName"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                                 <color key="textColor" red="0.35686274509999999" green="0.50980392159999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Description     that    can haaave more lines" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="s22-Mm-okM">
-                                <rect key="frame" x="16" y="116" width="343" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Description     that    can haaave more lines" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="s22-Mm-okM">
+                                <rect key="frame" x="16" y="116" width="343" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1bY-mG-9sr"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -595,8 +624,17 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="s22-Mm-okM" firstAttribute="top" secondItem="YPj-K4-Wih" secondAttribute="bottom" constant="8" id="HIc-1M-3rX"/>
+                            <constraint firstItem="YPj-K4-Wih" firstAttribute="top" secondItem="AL3-lA-9g4" secondAttribute="bottom" constant="16" id="Kz7-i3-rPX"/>
+                            <constraint firstItem="s22-Mm-okM" firstAttribute="leading" secondItem="w2y-8w-gJI" secondAttribute="leadingMargin" id="ddD-35-FDa"/>
+                            <constraint firstAttribute="trailing" secondItem="YPj-K4-Wih" secondAttribute="trailing" constant="16" id="gZU-Uq-JW0"/>
+                            <constraint firstItem="s22-Mm-okM" firstAttribute="trailing" secondItem="w2y-8w-gJI" secondAttribute="trailingMargin" id="gtL-4f-CWj"/>
+                            <constraint firstItem="YPj-K4-Wih" firstAttribute="leading" secondItem="w2y-8w-gJI" secondAttribute="leading" constant="16" id="sgb-1B-TCQ"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="constraintTextDescriptionHeight" destination="1bY-mG-9sr" id="zbk-vt-Kdz"/>
                         <outlet property="lblAssignedTo" destination="YtZ-8I-8qi" id="ara-eh-cXd"/>
                         <outlet property="lblName" destination="YPj-K4-Wih" id="sOM-eu-n4e"/>
                         <outlet property="lblStatus" destination="3Zc-d9-br4" id="o7F-sv-VE4"/>
