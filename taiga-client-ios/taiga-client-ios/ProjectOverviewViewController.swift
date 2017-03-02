@@ -33,6 +33,11 @@ class ProjectOverviewViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    @IBAction func logoutClicked(_ sender: Any) {
+        TaigaSettings.setBaseUrl(value: "")
+        KeychainWrapper.standard.removeObject(forKey: AuthenticationManager.KEY_KEYCHAIN_AUTH_TOKEN)
+    }
 }
 
 extension ProjectOverviewViewController: UITableViewDelegate, UITableViewDataSource {
