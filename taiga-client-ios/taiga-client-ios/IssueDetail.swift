@@ -29,18 +29,6 @@ class IssueDetail {
         status_extra_info = StatusExtraInfo(json: json["status_extra_info"])
     }
     
-    public class StatusExtraInfo {
-        let color: String
-        let is_closed: Bool
-        let name: String
-        
-        init(json: JSON) {
-            color = json["color"].stringValue
-            is_closed = json["is_closed"].boolValue
-            name = json["name"].stringValue
-        }
-    }
-    
     public class AssignedToExtraInfo {
         let full_name_display: String
         

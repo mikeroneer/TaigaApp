@@ -18,6 +18,8 @@
 		2AB83C1C1E658D3200D3367E /* TimelineEntryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB83C1B1E658D3200D3367E /* TimelineEntryDetail.swift */; };
 		2AB83C1E1E658F9000D3367E /* TimelineManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB83C1D1E658F9000D3367E /* TimelineManager.swift */; };
 		2AB83C211E6760EE00D3367E /* IssueOverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB83C201E6760EE00D3367E /* IssueOverviewCell.swift */; };
+		2AB83C231E68399800D3367E /* UserstoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB83C221E68399800D3367E /* UserstoryCell.swift */; };
+		2AB83C251E683C8E00D3367E /* StatusExtraInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB83C241E683C8E00D3367E /* StatusExtraInfo.swift */; };
 		46F17142EE1B6484F358A328 /* Pods_taiga_client_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 581DDF2247ABEBD787A48550 /* Pods_taiga_client_ios.framework */; };
 		8512B89B9D81F96A1ACA1D77 /* Pods_taiga_client_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C060362E422E02D104C7C1 /* Pods_taiga_client_iosUITests.framework */; };
 		A93F261788B83805DA03D42A /* Pods_taiga_client_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D427F40F9042C684B9F59147 /* Pods_taiga_client_iosTests.framework */; };
@@ -78,6 +80,8 @@
 		2AB83C1B1E658D3200D3367E /* TimelineEntryDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineEntryDetail.swift; sourceTree = "<group>"; };
 		2AB83C1D1E658F9000D3367E /* TimelineManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineManager.swift; sourceTree = "<group>"; };
 		2AB83C201E6760EE00D3367E /* IssueOverviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueOverviewCell.swift; sourceTree = "<group>"; };
+		2AB83C221E68399800D3367E /* UserstoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserstoryCell.swift; sourceTree = "<group>"; };
+		2AB83C241E683C8E00D3367E /* StatusExtraInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusExtraInfo.swift; sourceTree = "<group>"; };
 		3C4BA92FB7FD1097D32DBBDA /* Pods-taiga-client-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-taiga-client-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-taiga-client-ios/Pods-taiga-client-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		581DDF2247ABEBD787A48550 /* Pods_taiga_client_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_taiga_client_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C060362E422E02D104C7C1 /* Pods_taiga_client_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_taiga_client_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +194,7 @@
 				2A876A971E64BD0D008CF223 /* UserStoryDetail.swift */,
 				2AB83C151E6583BD00D3367E /* IssueDetail.swift */,
 				2AB83C1B1E658D3200D3367E /* TimelineEntryDetail.swift */,
+				2AB83C241E683C8E00D3367E /* StatusExtraInfo.swift */,
 			);
 			name = "taiga-models";
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				B43EDA6F1E5C27AA00FA1357 /* ProjectOverviewCell.swift */,
 				B43EDA711E5C645400FA1357 /* UIColor.swift */,
 				2AB83C201E6760EE00D3367E /* IssueOverviewCell.swift */,
+				2AB83C221E68399800D3367E /* UserstoryCell.swift */,
 			);
 			name = ui;
 			sourceTree = "<group>";
@@ -605,6 +611,7 @@
 				2A876A921E64BB19008CF223 /* UserstoryManager.swift in Sources */,
 				B44775C71E5329BD0026C5A1 /* ProjectListEntry.swift in Sources */,
 				B44775CC1E545C3C0026C5A1 /* PaginationPlugin.swift in Sources */,
+				2AB83C231E68399800D3367E /* UserstoryCell.swift in Sources */,
 				2AB83C181E6585B800D3367E /* IssueManager.swift in Sources */,
 				B4C2A4601E51B1DB000A92CF /* taiga_client_ios.xcdatamodeld in Sources */,
 				2A876A901E64B8CD008CF223 /* UserstoryService.swift in Sources */,
@@ -621,6 +628,7 @@
 				2AB83C211E6760EE00D3367E /* IssueOverviewCell.swift in Sources */,
 				2AB83C1E1E658F9000D3367E /* TimelineManager.swift in Sources */,
 				B4C2A4581E51B1DB000A92CF /* AppDelegate.swift in Sources */,
+				2AB83C251E683C8E00D3367E /* StatusExtraInfo.swift in Sources */,
 				B480C1D51E51E8FB00A41AD1 /* UserAuthenticationDetail.swift in Sources */,
 				B43EDA701E5C27AA00FA1357 /* ProjectOverviewCell.swift in Sources */,
 				B44775C51E5326CE0026C5A1 /* ProjectManager.swift in Sources */,
