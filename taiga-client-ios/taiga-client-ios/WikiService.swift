@@ -1,52 +1,51 @@
 //
-//  UserstoryService.swift
+//  WikiService.swift
 //  taiga-client-ios
 //
-//  Created by Michael Rockenschaub on 27/02/2017.
+//  Created by Michael Rockenschaub on 02/03/2017.
 //  Copyright © 2017 r31r0c. All rights reserved.
 //
 
 import Moya
 
-enum UserstoryService {
-    case getUserstoriesOfProject(projectId: Int)
-    case getTimelineOfProject(projectId: Int)
+enum WikiService {
+    case getWikiLinks(projectId: Int)
+    case getWikiPage(pageId: Int)
 }
 
-extension UserstoryService: TargetType {
+extension WikiService: TargetType {
     var baseURL: URL {
         return URL(string: TaigaSettings.getBaseUrl())!
     }
     
     var path: String {
         switch self {
-        case .getUserstoriesOfProject:
-            return "/userstories"
-        case .getTimelineOfProject(let projectId):
-            return "/timeline/project/\(projectId)"
+        case .getWikiLinks:
+            return "/wiki-links"
+        case .getWikiPage(let pageId):
+            return "/wiki/\(pageId)"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getUserstoriesOfProject, .getTimelineOfProject:
+        case .getWikiLinks, .getWikiPage:
             return .get
         }
     }
     
     var parameters: [String: Any]? {
         switch self {
-        case .getUserstoriesOfProject(let projectId):
+        case .getWikiLinks(let projectId):
             return ["project" : projectId]
-            
-        case .getTimelineOfProject:
+        case .getWikiPage:
             return [:]
         }
     }
     
     var parameterEncoding: ParameterEncoding {
         switch self {
-        case .getUserstoriesOfProject, .getTimelineOfProject:
+        case .getWikiLinks, .getWikiPage:
             return URLEncoding.default
         }
     }
@@ -67,7 +66,7 @@ extension UserstoryService: TargetType {
     
     var validate: Bool {
         switch self {
-        case .getUserstoriesOfProject, .getTimelineOfProject:
+        case .getWikiLinks, .getWikiPage:
             return true
         }
     }

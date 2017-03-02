@@ -13,11 +13,11 @@ import SwiftKeychainWrapper
 class IssueManager {
     static let instance = IssueManager()
     
-    var provider: MoyaProvider<UserstoryService>
+    var provider: MoyaProvider<IssueService>
     
     private init() {
         let authPlugin = TaigaAccessTokenPlugin(token: KeychainWrapper.standard.string(forKey: AuthenticationManager.KEY_KEYCHAIN_AUTH_TOKEN)!)
-        provider = MoyaProvider<UserstoryService>(plugins: [authPlugin, PaginationPlugin(paginationEnabled: false), NetworkLoggerPlugin()])
+        provider = MoyaProvider<IssueService>(plugins: [authPlugin, PaginationPlugin(paginationEnabled: false), NetworkLoggerPlugin()])
     }
     
     func getIssuesOfProject(projectId: Int, completion: @escaping (_ issueDetails: [IssueDetail]) -> ()) {
@@ -34,6 +34,20 @@ class IssueManager {
                     }
                     
                     completion(issueDetails)
+                }
+            case let .failure(error):
+                print(error)
+            }
+        }
+    }
+    
+    func getDetailsOfIssue(issueId: Int, completion: @escaping(_ issueDetails: IssueDetailGET) -> ())  {
+        provider.request(.getDetailsOfIssue(issueId: issueId)) { result in
+            switch result {
+            case let .success(moyaResponse):
+                if moyaResponse.statusCode == 200 {
+                    let json = JSON(data: (moyaResponse.data))
+                    completion(IssueDetailGET(json: json))
                 }
             case let .failure(error):
                 print(error)

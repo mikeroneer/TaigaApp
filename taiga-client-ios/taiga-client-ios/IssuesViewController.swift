@@ -32,6 +32,16 @@ class IssuesViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let index = self.tableView.indexPathForSelectedRow
+        
+        if segue.identifier == "segueIssueDetail" {
+            if let issueDetailsVC = segue.destination as? IssueDetailsViewController, let idx = index {
+                issueDetailsVC.issueId = issues[idx.row].id
+            }
+        }
+    }
 }
 
 extension IssuesViewController: UITableViewDelegate, UITableViewDataSource {
