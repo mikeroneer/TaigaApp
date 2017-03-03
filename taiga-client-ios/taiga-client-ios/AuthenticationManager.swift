@@ -11,6 +11,8 @@ import SwiftyJSON
 
 class AuthenticationManager {
     static let KEY_KEYCHAIN_AUTH_TOKEN = "keychainAuthToken"
+    static let KEY_KEYCHAIN_USERNAME_TOKEN = "keychainUsername"
+    static let KEY_KEYCHAIN_PASSWORD_TOKEN = "keychainPassword"
     
     static let provider = MoyaProvider<AuthenticationService>()
     
