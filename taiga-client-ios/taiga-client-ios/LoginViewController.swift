@@ -18,6 +18,34 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
+        
+        // Auto login
+        if let username = KeychainWrapper.standard.string(forKey: AuthenticationManager.KEY_KEYCHAIN_USERNAME_TOKEN), let password = KeychainWrapper.standard.string(forKey: AuthenticationManager.KEY_KEYCHAIN_PASSWORD_TOKEN) {
+            self.enableInput(shouldEnable: false)
+            
+            let activityView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+            activityView.center = self.view.center
+            activityView.startAnimating()
+            
+            self.view.addSubview(activityView)
+            
+            AuthenticationManager.authenticateUser(username: username, password: password) { (userAuthenticationDetail) in
+                if let authDetails = userAuthenticationDetail {
+                    let saveTokenSuccess = KeychainWrapper.standard.set(authDetails.auth_token, forKey: AuthenticationManager.KEY_KEYCHAIN_AUTH_TOKEN)
+                    
+                    if saveTokenSuccess {
+                        TaigaSettings.setAuthenticatedUser(value: authDetails.id)
+                        self.performSegue(withIdentifier: "loginSuccessfulSegue", sender: nil)
+                    }
+                } else {
+                    self.view.makeToast("Auto login failed")
+                }
+                
+                self.enableInput(shouldEnable: true)
+                activityView.hidesWhenStopped = true
+                activityView.stopAnimating()
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,18 +63,30 @@ class LoginViewController: UIViewController {
             return
         }
         
+        self.enableInput(shouldEnable: false)
+        
         AuthenticationManager.authenticateUser(username: textUsername.text!, password: textPassword.text!) { (userAuthenticationDetail) in
             if let authDetails = userAuthenticationDetail {
                 let saveTokenSuccess = KeychainWrapper.standard.set(authDetails.auth_token, forKey: AuthenticationManager.KEY_KEYCHAIN_AUTH_TOKEN)
+                let saveUsernameSuccess = KeychainWrapper.standard.set(self.textUsername.text!, forKey: AuthenticationManager.KEY_KEYCHAIN_USERNAME_TOKEN)
+                let savePasswordSuccess = KeychainWrapper.standard.set(self.textPassword.text!, forKey: AuthenticationManager.KEY_KEYCHAIN_PASSWORD_TOKEN)
                 
-                if saveTokenSuccess {
+                if saveTokenSuccess && saveUsernameSuccess && savePasswordSuccess {
                     TaigaSettings.setAuthenticatedUser(value: authDetails.id)
                     self.performSegue(withIdentifier: "loginSuccessfulSegue", sender: sender)
                 }
             } else {
                 self.view.makeToast("Login failed")
             }
+            
+            self.enableInput(shouldEnable: true)
         }
+    }
+    
+    func enableInput(shouldEnable: Bool) {
+        self.textServer.isEnabled = shouldEnable
+        self.textUsername.isEnabled = shouldEnable
+        self.textPassword.isEnabled = shouldEnable
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

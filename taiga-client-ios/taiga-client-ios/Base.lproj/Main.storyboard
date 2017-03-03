@@ -261,7 +261,7 @@
         <!--ProjectOverview-->
         <scene sceneID="TM5-dM-3na">
             <objects>
-                <viewController title="ProjectOverview" id="tEv-Ou-yH4" customClass="ProjectOverviewViewController" customModule="taiga_client_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProjectOverviewViewController" title="ProjectOverview" id="tEv-Ou-yH4" customClass="ProjectOverviewViewController" customModule="taiga_client_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2d7-Ig-Rxj"/>
                         <viewControllerLayoutGuide type="bottom" id="4xt-Tx-rQX"/>
