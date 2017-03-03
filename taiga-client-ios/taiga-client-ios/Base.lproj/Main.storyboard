@@ -362,7 +362,7 @@
                             <constraint firstItem="r4Z-Qe-MnI" firstAttribute="top" secondItem="Guh-1R-EnL" secondAttribute="top" id="zcO-o2-rVx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Project Overview" id="55H-mg-Wfe">
+                    <navigationItem key="navigationItem" title="Projects" id="55H-mg-Wfe">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="US3-SG-wYZ">
                             <connections>
                                 <action selector="onLogoutClicked:" destination="tEv-Ou-yH4" id="ufh-1H-hDr"/>
