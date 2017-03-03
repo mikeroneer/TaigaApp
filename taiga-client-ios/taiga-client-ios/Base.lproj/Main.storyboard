@@ -363,6 +363,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Project Overview" id="55H-mg-Wfe">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="US3-SG-wYZ">
+                            <connections>
+                                <action selector="onLogoutClicked:" destination="tEv-Ou-yH4" id="ufh-1H-hDr"/>
+                                <segue destination="lQt-tJ-17M" kind="unwind" identifier="unwindToLoginSegue" unwindAction="undwindToLoginWithSegue:" id="T5i-LE-WCQ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Gtm-9r-lxE">
                             <connections>
                                 <action selector="onCreateProjectClick:" destination="tEv-Ou-yH4" id="UPT-oz-iAH"/>
@@ -377,6 +383,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eK3-GY-FFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="lQt-tJ-17M" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1836" y="36.431784107946029"/>
         </scene>

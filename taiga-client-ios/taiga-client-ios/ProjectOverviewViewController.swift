@@ -13,6 +13,7 @@ class ProjectOverviewViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    
     var projects: [ProjectListEntry] = []
 
     override func viewDidLoad() {
@@ -32,6 +33,13 @@ class ProjectOverviewViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func onLogoutClicked(_ sender: Any) {
+        KeychainWrapper.standard.removeObject(forKey: AuthenticationManager.KEY_KEYCHAIN_USERNAME_TOKEN)
+        KeychainWrapper.standard.removeObject(forKey: AuthenticationManager.KEY_KEYCHAIN_PASSWORD_TOKEN)
+        KeychainWrapper.standard.removeObject(forKey: AuthenticationManager.KEY_KEYCHAIN_AUTH_TOKEN)
+        self.performSegue(withIdentifier: "unwindToLoginSegue", sender: sender)
     }
 }
 

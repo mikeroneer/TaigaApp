@@ -73,6 +73,7 @@ class LoginViewController: UIViewController {
                 
                 if saveTokenSuccess && saveUsernameSuccess && savePasswordSuccess {
                     TaigaSettings.setAuthenticatedUser(value: authDetails.id)
+                    self.textPassword.text = ""
                     self.performSegue(withIdentifier: "loginSuccessfulSegue", sender: sender)
                 }
             } else {
@@ -82,6 +83,8 @@ class LoginViewController: UIViewController {
             self.enableInput(shouldEnable: true)
         }
     }
+    
+    @IBAction func undwindToLogin(segue: UIStoryboardSegue) {}
     
     func enableInput(shouldEnable: Bool) {
         self.textServer.isEnabled = shouldEnable
