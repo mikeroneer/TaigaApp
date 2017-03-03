@@ -10,6 +10,7 @@ import Moya
 
 enum UserstoryService {
     case getUserstoriesOfProject(projectId: Int)
+    case getTimelineOfProject(projectId: Int)
 }
 
 extension UserstoryService: TargetType {
@@ -21,12 +22,14 @@ extension UserstoryService: TargetType {
         switch self {
         case .getUserstoriesOfProject:
             return "/userstories"
+        case .getTimelineOfProject(let projectId):
+            return "/timeline/project/\(projectId)"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getUserstoriesOfProject:
+        case .getUserstoriesOfProject, .getTimelineOfProject:
             return .get
         }
     }
@@ -35,12 +38,15 @@ extension UserstoryService: TargetType {
         switch self {
         case .getUserstoriesOfProject(let projectId):
             return ["project" : projectId]
+            
+        case .getTimelineOfProject:
+            return [:]
         }
     }
     
     var parameterEncoding: ParameterEncoding {
         switch self {
-        case .getUserstoriesOfProject:
+        case .getUserstoriesOfProject, .getTimelineOfProject:
             return URLEncoding.default
         }
     }
@@ -61,7 +67,7 @@ extension UserstoryService: TargetType {
     
     var validate: Bool {
         switch self {
-        case .getUserstoriesOfProject:
+        case .getUserstoriesOfProject, .getTimelineOfProject:
             return true
         }
     }

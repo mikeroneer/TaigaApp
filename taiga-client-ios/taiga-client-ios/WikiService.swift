@@ -1,54 +1,52 @@
 //
-//  ProjectService.swift
+//  WikiService.swift
 //  taiga-client-ios
 //
-//  Created by Dominik on 14.02.17.
+//  Created by Michael Rockenschaub on 02/03/2017.
 //  Copyright © 2017 r31r0c. All rights reserved.
 //
 
 import Moya
 
-enum ProjectService {
-    case getProjectsForUser(userid: Int)
-    case createProject(project: ProjectCreate)
+enum WikiService {
+    case getWikiLinks(projectId: Int)
+    case getWikiPage(pageId: Int)
 }
 
-extension ProjectService : TargetType {
+extension WikiService: TargetType {
     var baseURL: URL {
         return URL(string: TaigaSettings.getBaseUrl())!
     }
     
     var path: String {
         switch self {
-        case .getProjectsForUser, .createProject:
-            return "/projects"
+        case .getWikiLinks:
+            return "/wiki-links"
+        case .getWikiPage(let pageId):
+            return "/wiki/\(pageId)"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getProjectsForUser:
+        case .getWikiLinks, .getWikiPage:
             return .get
-        case .createProject:
-            return .post
         }
     }
     
     var parameters: [String: Any]? {
         switch self {
-        case .getProjectsForUser(let userid):
-            return ["member" : userid]
-        case .createProject(let project):
-            return project.toJson()
+        case .getWikiLinks(let projectId):
+            return ["project" : projectId]
+        case .getWikiPage:
+            return [:]
         }
     }
     
     var parameterEncoding: ParameterEncoding {
         switch self {
-        case .getProjectsForUser:
+        case .getWikiLinks, .getWikiPage:
             return URLEncoding.default
-        case .createProject:
-            return JSONEncoding.default
         }
     }
     
@@ -61,14 +59,14 @@ extension ProjectService : TargetType {
     
     var task: Task {
         switch self {
-        case .getProjectsForUser, .createProject:
+        default:
             return .request
         }
     }
     
     var validate: Bool {
         switch self {
-        case .getProjectsForUser, .createProject:
+        case .getWikiLinks, .getWikiPage:
             return true
         }
     }

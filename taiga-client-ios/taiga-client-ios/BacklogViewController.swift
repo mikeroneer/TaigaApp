@@ -18,6 +18,8 @@ class BacklogViewController: UIViewController {
         super.viewDidLoad()
         userStoriesTableView.dataSource = self
         userStoriesTableView.delegate = self
+        userStoriesTableView.rowHeight = UITableViewAutomaticDimension
+        userStoriesTableView.estimatedRowHeight = 140
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -43,9 +45,12 @@ extension BacklogViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "userstory_cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "userstory_cell", for: indexPath) as! UserstoryCell
         
-        cell.textLabel?.text = "#\(userStories[indexPath.row].ref) \(userStories[indexPath.row].subject)"
+        cell.lblName.text = "#\(userStories[indexPath.row].ref) \(userStories[indexPath.row].subject)"
+        cell.lblPoints.text = String(userStories[indexPath.row].total_points)
+        cell.lblStatus.text = userStories[indexPath.row].status_extra_info.name
+        cell.lblStatus.textColor = UIColor(hexString: userStories[indexPath.row].status_extra_info.color)
         
         return cell
     }

@@ -1,54 +1,52 @@
 //
-//  ProjectService.swift
+//  IssueService.swift
 //  taiga-client-ios
 //
-//  Created by Dominik on 14.02.17.
+//  Created by Michael Rockenschaub on 02/03/2017.
 //  Copyright © 2017 r31r0c. All rights reserved.
 //
 
 import Moya
 
-enum ProjectService {
-    case getProjectsForUser(userid: Int)
-    case createProject(project: ProjectCreate)
+enum IssueService {
+    case getIssuesOfProject(projectId: Int)
+    case getDetailsOfIssue(issueId: Int)
 }
 
-extension ProjectService : TargetType {
+extension IssueService: TargetType {
     var baseURL: URL {
         return URL(string: TaigaSettings.getBaseUrl())!
     }
     
     var path: String {
         switch self {
-        case .getProjectsForUser, .createProject:
-            return "/projects"
+        case .getIssuesOfProject:
+            return "/issues"
+        case .getDetailsOfIssue(let issueId):
+            return "/issues/\(issueId)"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getProjectsForUser:
+        case .getIssuesOfProject, .getDetailsOfIssue:
             return .get
-        case .createProject:
-            return .post
         }
     }
     
     var parameters: [String: Any]? {
         switch self {
-        case .getProjectsForUser(let userid):
-            return ["member" : userid]
-        case .createProject(let project):
-            return project.toJson()
+        case .getIssuesOfProject(let projectId):
+            return ["project" : projectId]
+        case .getDetailsOfIssue:
+            return [:]
         }
     }
     
     var parameterEncoding: ParameterEncoding {
         switch self {
-        case .getProjectsForUser:
+        case .getIssuesOfProject, .getDetailsOfIssue:
             return URLEncoding.default
-        case .createProject:
-            return JSONEncoding.default
         }
     }
     
@@ -61,14 +59,14 @@ extension ProjectService : TargetType {
     
     var task: Task {
         switch self {
-        case .getProjectsForUser, .createProject:
+        default:
             return .request
         }
     }
     
     var validate: Bool {
         switch self {
-        case .getProjectsForUser, .createProject:
+        case .getIssuesOfProject, .getDetailsOfIssue:
             return true
         }
     }
