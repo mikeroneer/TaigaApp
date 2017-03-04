@@ -21,7 +21,7 @@ class ProjectListEntry {
     let total_watchers: Int
     let members: [Int]
     let logo_small_url: String?
-    
+ 
     init(json: JSON) {
         id = json["id"].intValue
         name = json["name"].stringValue
