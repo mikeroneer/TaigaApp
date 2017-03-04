@@ -22,7 +22,7 @@ class IssueDetailGET {
         ref = json["ref"].intValue
         subject = json["subject"].stringValue
         description = json["description"].stringValue
-        created_date = json["created-date"].stringValue
+        created_date = json["created_date"].stringValue
         status_extra_info = StatusExtraInfo(json: json["status_extra_info"])
         
         if json["assigned_to_extra_info"] == JSON.null {

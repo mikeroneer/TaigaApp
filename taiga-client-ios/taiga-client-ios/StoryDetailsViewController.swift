@@ -31,7 +31,7 @@ class StoryDetailsViewController: UIViewController {
                 textDescription.text = details.description
             }
             
-            lblCreated.text = details.createdDate
+            lblCreated.text = TimeHelper.getReadableDateString(taigaDate: details.createdDate)
             lblStatus.text = details.statusExtraInfo.name
             if details.assignedTo.isEmpty {
                 lblAssignedTo.text = "Not assigned"
