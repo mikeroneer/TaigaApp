@@ -19,8 +19,12 @@ class IssueDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        clearFields()
+        
         IssueManager.instance.getDetailsOfIssue(issueId: issueId) { issueDetail in
-            self.lblName.text = issueDetail.subject
+            self.lblName.text = "#\(issueDetail.ref) \(issueDetail.subject)"
+            
             if issueDetail.description.isEmpty {
                 self.textDescription.text = "No description"
             } else {
@@ -42,5 +46,13 @@ class IssueDetailsViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func clearFields() {
+        self.lblName.text?.removeAll()
+        self.textDescription.text.removeAll()
+        self.lblStatus.text?.removeAll()
+        self.lblAssignedTo.text?.removeAll()
+        self.lblCreatedDate.text?.removeAll()
     }
 }

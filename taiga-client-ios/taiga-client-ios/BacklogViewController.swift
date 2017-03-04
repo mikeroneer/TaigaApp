@@ -11,6 +11,7 @@ import UIKit
 class BacklogViewController: UIViewController {
 
     @IBOutlet weak var userStoriesTableView: UITableView!
+    @IBOutlet weak var loadingAnimator: UIActivityIndicatorView!
     
     var userStories: [UserStoryDetail] = []
     
@@ -20,12 +21,25 @@ class BacklogViewController: UIViewController {
         userStoriesTableView.delegate = self
         userStoriesTableView.rowHeight = UITableViewAutomaticDimension
         userStoriesTableView.estimatedRowHeight = 140
+        
+        self.tabBarController?.title = TaigaSettings.SELECTED_PROJECT_NAME
     }
     
     override func viewDidAppear(_ animated: Bool) {
         UserstoryManager.instance.getUserstoresOfProject(projectId: TaigaSettings.SELECTED_PROJECT_ID) { (userStoryDetails) in
             self.userStories = userStoryDetails
-            self.userStoriesTableView.reloadData()
+            
+            if self.userStories.count > 0 {
+                self.userStoriesTableView.reloadData()
+                self.userStoriesTableView.backgroundView = nil
+            } else {
+                let label = UILabel()
+                label.textAlignment = .center
+                label.text = "Looks empty here."
+                self.userStoriesTableView.backgroundView = label
+            }
+            
+            self.loadingAnimator.isHidden = true
         }
     }
     

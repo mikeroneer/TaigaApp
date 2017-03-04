@@ -273,12 +273,16 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6zs-AB-Bi2" customClass="User">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="5i6-Ys-Qyd">
+                                    <rect key="frame" x="0.0" y="114" width="414" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="userstory_cell" id="gqM-1O-g4g" customClass="UserstoryCell" customModule="taiga_client_ios" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" tableViewCell="gqM-1O-g4g" id="qUG-zj-Fq1">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="85.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="86"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="232" text="#7 Userstory name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVu-lM-qIa">
@@ -345,6 +349,7 @@
                         <nil key="title"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="loadingAnimator" destination="5i6-Ys-Qyd" id="WSb-1c-pOa"/>
                         <outlet property="userStoriesTableView" destination="6zs-AB-Bi2" id="yxe-m4-nnL"/>
                     </connections>
                 </viewController>
@@ -367,12 +372,16 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uaa-G3-Cuq">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" id="Fth-TQ-ZYM">
+                                    <rect key="frame" x="0.0" y="72" width="414" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="wiki_cell" id="x8t-ys-gIs">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x8t-ys-gIs" id="mp5-rj-Idu">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -392,6 +401,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Wiki" id="aRg-V6-8fA"/>
                     <connections>
+                        <outlet property="loadingAnimator" destination="Fth-TQ-ZYM" id="WCO-fJ-y0w"/>
                         <outlet property="tableView" destination="uaa-G3-Cuq" id="job-RQ-9MP"/>
                     </connections>
                 </viewController>
@@ -566,6 +576,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hlW-aw-wvp">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" id="mNF-qd-DMB">
+                                    <rect key="frame" x="0.0" y="114" width="414" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="issue_cell" id="CUs-b8-zFy" customClass="IssueOverviewCell" customModule="taiga_client_ios" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="86"/>
@@ -635,6 +649,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Issues" id="mYV-CR-L2z"/>
                     <connections>
+                        <outlet property="loadingAnimator" destination="mNF-qd-DMB" id="iLd-Aw-BKg"/>
                         <outlet property="tableView" destination="hlW-aw-wvp" id="ORg-hd-k6y"/>
                     </connections>
                 </viewController>
@@ -772,12 +787,16 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r4Z-Qe-MnI">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" id="C28-q6-1jx">
+                                    <rect key="frame" x="0.0" y="128" width="414" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="project_cell" id="Eyt-YA-gaO" customClass="ProjectOverviewCell" customModule="taiga_client_ios" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" tableViewCell="Eyt-YA-gaO" id="Rc7-WM-jPS">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSS-7h-61C">
@@ -879,6 +898,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="loadingAnimator" destination="C28-q6-1jx" id="pSE-Ua-fXZ"/>
                         <outlet property="tableView" destination="r4Z-Qe-MnI" id="Wid-hZ-uBL"/>
                     </connections>
                 </viewController>

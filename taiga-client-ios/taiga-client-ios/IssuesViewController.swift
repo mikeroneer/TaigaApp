@@ -11,6 +11,7 @@ import UIKit
 class IssuesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var loadingAnimator: UIActivityIndicatorView!
     
     var issues: [IssueDetail] = []
     
@@ -25,7 +26,18 @@ class IssuesViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         IssueManager.instance.getIssuesOfProject(projectId: TaigaSettings.SELECTED_PROJECT_ID) { (issueDetails) in
             self.issues = issueDetails
-            self.tableView.reloadData()
+            
+            if self.issues.count > 0 {
+                self.tableView.reloadData()
+                self.tableView.backgroundView = nil
+            } else {
+                let label = UILabel()
+                label.textAlignment = .center
+                label.text = "Looks empty here."
+                self.tableView.backgroundView = label
+            }
+            
+            self.loadingAnimator.isHidden = true
         }
     }
     
