@@ -42,7 +42,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Server" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h0e-ks-KiT">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Server (empty for default)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h0e-ks-KiT">
                                 <rect key="frame" x="82" y="353" width="250" height="30"/>
                                 <color key="backgroundColor" red="0.98039215690000003" green="1" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -409,10 +409,10 @@
             </objects>
             <point key="canvasLocation" x="3824.8000000000002" y="515.8920539730135"/>
         </scene>
-        <!--Wiki Details-->
+        <!--Wikipage-->
         <scene sceneID="GNd-ws-W2h">
             <objects>
-                <viewController title="Wiki Details" id="CPJ-HE-ame" customClass="WikiDetailsViewController" customModule="taiga_client_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Wikipage" id="CPJ-HE-ame" customClass="WikiDetailsViewController" customModule="taiga_client_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="l8V-Td-IFx"/>
                         <viewControllerLayoutGuide type="bottom" id="3jl-hj-14Z"/>
