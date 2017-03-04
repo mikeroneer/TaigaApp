@@ -14,11 +14,12 @@ class UserStoryDetail {
     let id: Int
     let ref: Int
     let subject: String
-    let assignedTo: String
+    let assignedTo: Int
     let status: Int
     let comment: String
     let totalPoints: Double
     let statusExtraInfo: StatusExtraInfo
+    let assignedToExtraInfo: AssignedToExtraInfo
     
     init(json: JSON) {
         createdDate = json["created_date"].stringValue
@@ -26,10 +27,11 @@ class UserStoryDetail {
         id = json["id"].intValue
         subject = json["subject"].stringValue
         ref = json["ref"].intValue
-        assignedTo = json["assigned_to"].stringValue
+        assignedTo = json["assigned_to"].intValue
         status = json["status"].intValue
         comment = json["comment"].stringValue
         totalPoints = json["total_points"].doubleValue
         statusExtraInfo = StatusExtraInfo(json: json["status_extra_info"])
+        assignedToExtraInfo = AssignedToExtraInfo(json: json["assigned_to_extra_info"])
     }
 }

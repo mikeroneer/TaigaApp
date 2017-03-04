@@ -33,11 +33,14 @@ class StoryDetailsViewController: UIViewController {
             
             lblCreated.text = TimeHelper.getReadableDateString(taigaDate: details.createdDate)
             lblStatus.text = details.statusExtraInfo.name
-            if details.assignedTo.isEmpty {
+            lblStatus.textColor = UIColor(hexString: details.statusExtraInfo.color)
+            
+            if details.assignedTo == 0 {
                 lblAssignedTo.text = "Not assigned"
             } else {
-                lblAssignedTo.text = details.assignedTo
+                lblAssignedTo.text = details.assignedToExtraInfo.full_name_display
             }
+            
             lblTotalPoints.text = "\(details.totalPoints) total points"
         }
     }

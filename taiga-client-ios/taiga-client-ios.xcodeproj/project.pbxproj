@@ -228,11 +228,11 @@
 				2A876A971E64BD0D008CF223 /* UserStoryDetail.swift */,
 				B484DE661E6AC78E00134855 /* UserStoryDetailGET.swift */,
 				2AB83C151E6583BD00D3367E /* IssueDetail.swift */,
+				2AB83C391E6899FB00D3367E /* IssueDetailGET.swift */,
 				2AB83C1B1E658D3200D3367E /* TimelineEntryDetail.swift */,
 				2AB83C241E683C8E00D3367E /* StatusExtraInfo.swift */,
 				2AB83C281E68450B00D3367E /* WikiLink.swift */,
 				2AB83C351E68910A00D3367E /* WikiPage.swift */,
-				2AB83C391E6899FB00D3367E /* IssueDetailGET.swift */,
 				2AB83C3D1E689D6D00D3367E /* AssignedToExtraInfo.swift */,
 			);
 			name = "taiga-models";

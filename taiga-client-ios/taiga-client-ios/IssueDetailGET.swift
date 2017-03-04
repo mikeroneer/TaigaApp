@@ -9,6 +9,7 @@
 import SwiftyJSON
 
 class IssueDetailGET {
+    let assignedTo: Int
     let id: Int
     let ref: Int
     let subject: String
@@ -18,6 +19,7 @@ class IssueDetailGET {
     let assigned_to_extra_info: AssignedToExtraInfo?
     
     init(json: JSON) {
+        assignedTo = json["assigned_to"].intValue
         id = json["id"].intValue
         ref = json["ref"].intValue
         subject = json["subject"].stringValue

@@ -21,12 +21,22 @@ class IssueDetailsViewController: UIViewController {
         super.viewDidLoad()
         IssueManager.instance.getDetailsOfIssue(issueId: issueId) { issueDetail in
             self.lblName.text = issueDetail.subject
-            self.textDescription.text = issueDetail.description
-            //self.constraintTextDescriptionHeight.constant = self.textDescription.intrinsicContentSize.height
+            if issueDetail.description.isEmpty {
+                self.textDescription.text = "No description"
+            } else {
+                self.textDescription.text = issueDetail.description
+            }
+            
             self.lblStatus.text = issueDetail.status_extra_info.name
             self.lblStatus.textColor = UIColor(hexString: issueDetail.status_extra_info.color)
-            self.lblAssignedTo.text = issueDetail.assigned_to_extra_info?.full_name_display
+            if issueDetail.assignedTo == 0 {
+                self.lblAssignedTo.text = "Not assigned"
+            } else {
+                self.lblAssignedTo.text = issueDetail.assigned_to_extra_info?.full_name_display
+            }
             self.lblCreatedDate.text = TimeHelper.getReadableDateString(taigaDate: issueDetail.created_date)
+            
+            self.updateViewConstraints()
         }
     }
     
