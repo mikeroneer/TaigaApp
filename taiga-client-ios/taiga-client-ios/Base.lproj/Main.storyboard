@@ -344,7 +344,7 @@
                             <constraint firstItem="kI7-iO-rRL" firstAttribute="top" secondItem="6zs-AB-Bi2" secondAttribute="bottom" id="uCd-zr-QCf"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Backlog" id="DyW-DX-jfq"/>
+                    <tabBarItem key="tabBarItem" title="Backlog" image="icon_backlog" id="DyW-DX-jfq"/>
                     <navigationItem key="navigationItem" id="wNx-pg-RiS">
                         <nil key="title"/>
                     </navigationItem>
@@ -399,7 +399,7 @@
                             <constraint firstItem="uaa-G3-Cuq" firstAttribute="top" secondItem="z4y-RY-8LL" secondAttribute="top" id="cUD-WC-7TK"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Wiki" id="aRg-V6-8fA"/>
+                    <tabBarItem key="tabBarItem" title="Wiki" image="icon_wiki" id="aRg-V6-8fA"/>
                     <connections>
                         <outlet property="loadingAnimator" destination="Fth-TQ-ZYM" id="WCO-fJ-y0w"/>
                         <outlet property="tableView" destination="uaa-G3-Cuq" id="job-RQ-9MP"/>
@@ -647,7 +647,7 @@
                             <constraint firstItem="hlW-aw-wvp" firstAttribute="bottom" secondItem="0jL-Wj-C8O" secondAttribute="top" id="wAj-jB-cuz"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Issues" id="mYV-CR-L2z"/>
+                    <tabBarItem key="tabBarItem" title="Issues" image="icon_issues" id="mYV-CR-L2z"/>
                     <connections>
                         <outlet property="loadingAnimator" destination="mNF-qd-DMB" id="iLd-Aw-BKg"/>
                         <outlet property="tableView" destination="hlW-aw-wvp" id="ORg-hd-k6y"/>
@@ -927,8 +927,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_backlog" width="29" height="29"/>
+        <image name="icon_issues" width="29" height="29"/>
         <image name="icon_likes" width="133" height="133"/>
         <image name="icon_watchers" width="133" height="133"/>
+        <image name="icon_wiki" width="29" height="29"/>
         <image name="login_background" width="360" height="640"/>
         <image name="taiga_icon" width="555" height="555"/>
     </resources>

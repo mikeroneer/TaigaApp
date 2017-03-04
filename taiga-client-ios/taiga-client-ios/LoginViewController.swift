@@ -10,7 +10,7 @@ import UIKit
 import SwiftKeychainWrapper
 import Toast_Swift
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textServer: UITextField!
     @IBOutlet weak var textUsername: UITextField!
     @IBOutlet weak var textPassword: UITextField!
