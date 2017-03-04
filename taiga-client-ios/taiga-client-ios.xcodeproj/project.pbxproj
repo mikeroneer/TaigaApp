@@ -56,6 +56,9 @@
 		B484DE611E69F8A000134855 /* UIColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B484DE601E69F8A000134855 /* UIColorTests.swift */; };
 		B484DE631E6AB6F700134855 /* ProjectOverviewViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B484DE621E6AB6F700134855 /* ProjectOverviewViewControllerTests.swift */; };
 		B484DE651E6AB86200134855 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B484DE641E6AB86200134855 /* UIViewController.swift */; };
+		B484DE671E6AC78E00134855 /* UserStoryDetailGET.swift in Sources */ = {isa = PBXBuildFile; fileRef = B484DE661E6AC78E00134855 /* UserStoryDetailGET.swift */; };
+		B484DE691E6AD0BF00134855 /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B484DE681E6AD0BF00134855 /* TimeHelper.swift */; };
+		B484DE6B1E6AD4E200134855 /* TimeHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B484DE6A1E6AD4E200134855 /* TimeHelperTests.swift */; };
 		B4C2A4581E51B1DB000A92CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C2A4571E51B1DB000A92CF /* AppDelegate.swift */; };
 		B4C2A45A1E51B1DB000A92CF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C2A4591E51B1DB000A92CF /* LoginViewController.swift */; };
 		B4C2A4601E51B1DB000A92CF /* taiga_client_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4C2A45E1E51B1DB000A92CF /* taiga_client_ios.xcdatamodeld */; };
@@ -135,6 +138,9 @@
 		B484DE601E69F8A000134855 /* UIColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorTests.swift; sourceTree = "<group>"; };
 		B484DE621E6AB6F700134855 /* ProjectOverviewViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectOverviewViewControllerTests.swift; sourceTree = "<group>"; };
 		B484DE641E6AB86200134855 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		B484DE661E6AC78E00134855 /* UserStoryDetailGET.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStoryDetailGET.swift; sourceTree = "<group>"; };
+		B484DE681E6AD0BF00134855 /* TimeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeHelper.swift; sourceTree = "<group>"; };
+		B484DE6A1E6AD4E200134855 /* TimeHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeHelperTests.swift; sourceTree = "<group>"; };
 		B4C2A4541E51B1DB000A92CF /* taiga-client-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "taiga-client-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4C2A4571E51B1DB000A92CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4C2A4591E51B1DB000A92CF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -220,12 +226,13 @@
 				B43EDA661E5852C000FA1357 /* ProjectDetail.swift */,
 				B43EDA6C1E5857D000FA1357 /* UserDetail.swift */,
 				2A876A971E64BD0D008CF223 /* UserStoryDetail.swift */,
+				B484DE661E6AC78E00134855 /* UserStoryDetailGET.swift */,
 				2AB83C151E6583BD00D3367E /* IssueDetail.swift */,
+				2AB83C391E6899FB00D3367E /* IssueDetailGET.swift */,
 				2AB83C1B1E658D3200D3367E /* TimelineEntryDetail.swift */,
 				2AB83C241E683C8E00D3367E /* StatusExtraInfo.swift */,
 				2AB83C281E68450B00D3367E /* WikiLink.swift */,
 				2AB83C351E68910A00D3367E /* WikiPage.swift */,
-				2AB83C391E6899FB00D3367E /* IssueDetailGET.swift */,
 				2AB83C3D1E689D6D00D3367E /* AssignedToExtraInfo.swift */,
 			);
 			name = "taiga-models";
@@ -302,6 +309,7 @@
 				B45BBCFC1E51DE0C009ECB5A /* TaigaSettings.swift */,
 				B44775C81E5339360026C5A1 /* TaigaAccessTokenPlugin.swift */,
 				B44775CB1E545C3C0026C5A1 /* PaginationPlugin.swift */,
+				B484DE681E6AD0BF00134855 /* TimeHelper.swift */,
 			);
 			name = helper;
 			sourceTree = "<group>";
@@ -358,6 +366,7 @@
 		B4C2A46E1E51B1DB000A92CF /* taiga-client-iosTests */ = {
 			isa = PBXGroup;
 			children = (
+				B484DE6A1E6AD4E200134855 /* TimeHelperTests.swift */,
 				B484DE621E6AB6F700134855 /* ProjectOverviewViewControllerTests.swift */,
 				B484DE601E69F8A000134855 /* UIColorTests.swift */,
 				B4C2A46F1E51B1DB000A92CF /* taiga_client_iosTests.swift */,
@@ -682,12 +691,14 @@
 				B480C1D21E51E71600A41AD1 /* AuthenticationManager.swift in Sources */,
 				B43EDA721E5C645400FA1357 /* UIColor.swift in Sources */,
 				2AB83C211E6760EE00D3367E /* IssueOverviewCell.swift in Sources */,
+				B484DE691E6AD0BF00134855 /* TimeHelper.swift in Sources */,
 				2AB83C1E1E658F9000D3367E /* TimelineManager.swift in Sources */,
 				2AB83C341E68906B00D3367E /* WikiDetailsViewController.swift in Sources */,
 				B4C2A4581E51B1DB000A92CF /* AppDelegate.swift in Sources */,
 				2AB83C251E683C8E00D3367E /* StatusExtraInfo.swift in Sources */,
 				2AB83C2B1E68456C00D3367E /* WikiService.swift in Sources */,
 				2AB83C361E68910A00D3367E /* WikiPage.swift in Sources */,
+				B484DE671E6AC78E00134855 /* UserStoryDetailGET.swift in Sources */,
 				B480C1D51E51E8FB00A41AD1 /* UserAuthenticationDetail.swift in Sources */,
 				2AB83C401E68A48200D3367E /* IssueService.swift in Sources */,
 				B43EDA701E5C27AA00FA1357 /* ProjectOverviewCell.swift in Sources */,
@@ -711,6 +722,7 @@
 			files = (
 				B4C2A4701E51B1DB000A92CF /* taiga_client_iosTests.swift in Sources */,
 				B484DE631E6AB6F700134855 /* ProjectOverviewViewControllerTests.swift in Sources */,
+				B484DE6B1E6AD4E200134855 /* TimeHelperTests.swift in Sources */,
 				B484DE611E69F8A000134855 /* UIColorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

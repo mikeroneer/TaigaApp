@@ -32,6 +32,16 @@ class BacklogViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let index = self.userStoriesTableView.indexPathForSelectedRow
+        
+        if segue.identifier == "segueUserStoryDetail" {
+            if let storyDetailsVC = segue.destination as? StoryDetailsViewController, let idx = index {
+                storyDetailsVC.userstory = userStories[idx.row]
+            }
+        }
+    }
 }
 
 extension BacklogViewController: UITableViewDelegate, UITableViewDataSource {
@@ -48,9 +58,9 @@ extension BacklogViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userstory_cell", for: indexPath) as! UserstoryCell
         
         cell.lblName.text = "#\(userStories[indexPath.row].ref) \(userStories[indexPath.row].subject)"
-        cell.lblPoints.text = String(userStories[indexPath.row].total_points)
-        cell.lblStatus.text = userStories[indexPath.row].status_extra_info.name
-        cell.lblStatus.textColor = UIColor(hexString: userStories[indexPath.row].status_extra_info.color)
+        cell.lblPoints.text = String(userStories[indexPath.row].totalPoints)
+        cell.lblStatus.text = userStories[indexPath.row].statusExtraInfo.name
+        cell.lblStatus.textColor = UIColor(hexString: userStories[indexPath.row].statusExtraInfo.color)
         
         return cell
     }

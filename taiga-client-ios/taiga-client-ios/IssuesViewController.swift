@@ -59,14 +59,14 @@ extension IssuesViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.lblIssueName.text = "#\(issues[indexPath.row].ref) \(issues[indexPath.row].subject)"
         
-        if let assignedTo = issues[indexPath.row].assigned_to_extra_info {
+        if let assignedTo = issues[indexPath.row].assignedToExtraInfo {
             cell.lblAssignedTo.text = assignedTo.full_name_display
         } else {
             cell.lblAssignedTo.text = "not assigned"
         }
         
-        cell.lblStatus.text = issues[indexPath.row].status_extra_info.name
-        cell.lblStatus.textColor = UIColor(hexString: issues[indexPath.row].status_extra_info.color)
+        cell.lblStatus.text = issues[indexPath.row].statusExtraInfo.name
+        cell.lblStatus.textColor = UIColor(hexString: issues[indexPath.row].statusExtraInfo.color)
         
         return cell
     }
