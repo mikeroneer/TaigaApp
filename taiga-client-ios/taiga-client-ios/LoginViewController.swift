@@ -19,6 +19,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
         
+        self.textServer.delegate = self
+        self.textUsername.delegate = self
+        self.textPassword.delegate = self
+        
         // Auto login
         if let username = KeychainWrapper.standard.string(forKey: AuthenticationManager.KEY_KEYCHAIN_USERNAME_TOKEN), let password = KeychainWrapper.standard.string(forKey: AuthenticationManager.KEY_KEYCHAIN_PASSWORD_TOKEN) {
             self.enableInput(shouldEnable: false)
@@ -94,5 +98,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+}
+
+extension LoginViewController {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }

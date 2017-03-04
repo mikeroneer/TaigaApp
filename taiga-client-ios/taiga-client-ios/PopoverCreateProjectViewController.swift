@@ -9,7 +9,7 @@
 import UIKit
 import Toast_Swift
 
-class PopoverCreateProjectViewController: UIViewController {
+class PopoverCreateProjectViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var segControlTemplate: UISegmentedControl!
     @IBOutlet weak var textName: UITextField!
@@ -18,6 +18,9 @@ class PopoverCreateProjectViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.textName.delegate = self
+        self.textDescription.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,5 +74,12 @@ class PopoverCreateProjectViewController: UIViewController {
                 self.dismiss(animated: true, completion: nil)
             }
         }
+    }
+}
+
+extension PopoverCreateProjectViewController {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }
