@@ -51,7 +51,7 @@ class WikiViewController: UIViewController {
         if segue.identifier == "segueWikiDetail" {
             if let wikiDetailsVC = segue.destination as? WikiDetailsViewController, let idx = index {
                 wikiDetailsVC.wikiTitle = wikiLinks[idx.row].title
-                wikiDetailsVC.wikiPageId = wikiLinks[idx.row].id
+                wikiDetailsVC.wikiPageSlug = wikiLinks[idx.row].slug
             }
         }
     }
