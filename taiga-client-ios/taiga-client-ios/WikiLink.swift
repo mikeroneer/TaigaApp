@@ -11,10 +11,12 @@ import SwiftyJSON
 class WikiLink {
     let id: Int
     let title: String
+    let slug: String
 
     init(json: JSON) {
         id = json["id"].intValue
         title = json["title"].stringValue
+        slug = json["href"].stringValue
     }
 }
 
