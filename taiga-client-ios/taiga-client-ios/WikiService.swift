@@ -11,6 +11,7 @@ import Moya
 enum WikiService {
     case getWikiLinks(projectId: Int)
     case getWikiPage(pageId: Int)
+    case getWikiPageBySlug(slug: String)
 }
 
 extension WikiService: TargetType {
@@ -24,12 +25,14 @@ extension WikiService: TargetType {
             return "/wiki-links"
         case .getWikiPage(let pageId):
             return "/wiki/\(pageId)"
+        case .getWikiPageBySlug:
+            return "wiki/by_slug"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getWikiLinks, .getWikiPage:
+        case .getWikiLinks, .getWikiPage, .getWikiPageBySlug:
             return .get
         }
     }
@@ -40,12 +43,14 @@ extension WikiService: TargetType {
             return ["project" : projectId]
         case .getWikiPage:
             return [:]
+        case .getWikiPageBySlug(let slug):
+            return ["project" : TaigaSettings.SELECTED_PROJECT_ID, "slug" : slug]
         }
     }
     
     var parameterEncoding: ParameterEncoding {
         switch self {
-        case .getWikiLinks, .getWikiPage:
+        default:
             return URLEncoding.default
         }
     }
@@ -66,7 +71,7 @@ extension WikiService: TargetType {
     
     var validate: Bool {
         switch self {
-        case .getWikiLinks, .getWikiPage:
+        default:
             return true
         }
     }
