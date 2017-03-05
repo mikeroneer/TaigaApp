@@ -19,7 +19,7 @@ class IssueDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        IssueManager.instance.getDetailsOfIssue(issueId: issueId) { issueDetail in
+        IssueManager.instance().getDetailsOfIssue(issueId: issueId) { issueDetail in
             self.lblName.text = issueDetail.subject
             if issueDetail.description.isEmpty {
                 self.textDescription.text = "No description"

@@ -84,7 +84,9 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBAction func undwindToLogin(segue: UIStoryboardSegue) {}
+    @IBAction func undwindToLogin(segue: UIStoryboardSegue) {
+        AuthenticationManager.invalidateUser()
+    }
     
     func enableInput(shouldEnable: Bool) {
         self.textServer.isEnabled = shouldEnable

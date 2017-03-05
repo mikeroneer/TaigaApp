@@ -11,13 +11,25 @@ import SwiftyJSON
 import SwiftKeychainWrapper
 
 class WikiManager {
-    static let instance = WikiManager()
+    private static var privateInstance: WikiManager?
     
     var provider: MoyaProvider<WikiService>
     
     private init() {
         let authPlugin = TaigaAccessTokenPlugin(token: KeychainWrapper.standard.string(forKey: AuthenticationManager.KEY_KEYCHAIN_AUTH_TOKEN)!)
-        provider = MoyaProvider<WikiService>(plugins: [authPlugin, PaginationPlugin(paginationEnabled: false), NetworkLoggerPlugin()])
+        provider = MoyaProvider<WikiService>(plugins: [authPlugin, PaginationPlugin(paginationEnabled: false), AuthenticationStatusPlugin()])
+    }
+    
+    class func instance() -> WikiManager {
+        guard let uwInstance = privateInstance else {
+            privateInstance = WikiManager()
+            return privateInstance!
+        }
+        return uwInstance
+    }
+    
+    class func destroy() {
+        privateInstance = nil
     }
     
     func getWikiLinksForProject(projectId: Int, completion: @escaping (_ wikiLinks: [WikiLink]) -> ()) {

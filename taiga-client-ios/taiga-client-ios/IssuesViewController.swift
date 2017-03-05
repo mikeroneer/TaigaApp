@@ -23,7 +23,7 @@ class IssuesViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        IssueManager.instance.getIssuesOfProject(projectId: TaigaSettings.SELECTED_PROJECT_ID) { (issueDetails) in
+        IssueManager.instance().getIssuesOfProject(projectId: TaigaSettings.SELECTED_PROJECT_ID) { (issueDetails) in
             self.issues = issueDetails
             self.tableView.reloadData()
         }

@@ -65,7 +65,7 @@ class PopoverCreateProjectViewController: UIViewController {
     }
     
     func createProject(project: ProjectCreate) {
-        ProjectManager.instance.createProject(project: project) { (projectDetails) in
+        ProjectManager.instance().createProject(project: project) { (projectDetails) in
             if let details = projectDetails {
                 print(details)
                 self.dismiss(animated: true, completion: nil)

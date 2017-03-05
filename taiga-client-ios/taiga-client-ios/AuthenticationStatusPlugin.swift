@@ -9,14 +9,20 @@
 import Foundation
 import Moya
 import Result
+import SwiftKeychainWrapper
 
 public struct AuthenticationStatusPlugin: PluginType {
     
     public func didReceive(_ result: Result<Response, MoyaError>, target: TargetType) {
         if case .success(let response) = result {
-            print(response.statusCode)
-        } else {
-            
+            // Check for status-code 401 - unauthorized
+            if response.statusCode == 401 {
+                AuthenticationManager.invalidateUser()
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                let loginView: LoginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                UIApplication.shared.keyWindow?.rootViewController = loginView
+            }
         }
     }
 }

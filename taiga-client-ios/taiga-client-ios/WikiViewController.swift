@@ -19,7 +19,7 @@ class WikiViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        WikiManager.instance.getWikiLinksForProject(projectId: TaigaSettings.SELECTED_PROJECT_ID) { (wikiLinks) in
+        WikiManager.instance().getWikiLinksForProject(projectId: TaigaSettings.SELECTED_PROJECT_ID) { (wikiLinks) in
             self.wikiLinks = wikiLinks
             self.tableView.reloadData()
         }

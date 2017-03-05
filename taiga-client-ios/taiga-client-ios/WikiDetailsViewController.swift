@@ -21,7 +21,7 @@ class WikiDetailsViewController: UIViewController {
         
         lblTitle.text = wikiTitle
         
-        WikiManager.instance.getWikiPage(pageId: wikiPageId) { wikiPage in
+        WikiManager.instance().getWikiPage(pageId: wikiPageId) { wikiPage in
             self.lblcontent.text = wikiPage.content
         }
     }

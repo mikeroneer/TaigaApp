@@ -11,13 +11,25 @@ import SwiftyJSON
 import SwiftKeychainWrapper
 
 class UserstoryManager {
-    static let instance = UserstoryManager()
+    private static var privateInstance: UserstoryManager?
     
     var provider: MoyaProvider<UserstoryService>
     
     private init() {
         let authPlugin = TaigaAccessTokenPlugin(token: KeychainWrapper.standard.string(forKey: AuthenticationManager.KEY_KEYCHAIN_AUTH_TOKEN)!)
-        provider = MoyaProvider<UserstoryService>(plugins: [authPlugin, PaginationPlugin(paginationEnabled: false), NetworkLoggerPlugin()])
+        provider = MoyaProvider<UserstoryService>(plugins: [authPlugin, PaginationPlugin(paginationEnabled: false), AuthenticationStatusPlugin()])
+    }
+    
+    class func instance() -> UserstoryManager {
+        guard let uwInstance = privateInstance else {
+            privateInstance = UserstoryManager()
+            return privateInstance!
+        }
+        return uwInstance
+    }
+    
+    class func destroy() {
+        privateInstance = nil
     }
     
     func getUserstoresOfProject(projectId: Int, completion: @escaping (_ userStoryDetails: [UserStoryDetail]) -> ()) {
