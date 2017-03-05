@@ -21,7 +21,11 @@ class IssueDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        clearFields()
+        view.subviews.forEach { $0.isHidden = true }
+        let activityView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        activityView.center = self.view.center
+        activityView.startAnimating()
+        self.view.addSubview(activityView)
         
         IssueManager.instance().getDetailsOfIssue(issueId: issueId) { issueDetail in
             self.issue = issueDetail
@@ -42,7 +46,9 @@ class IssueDetailsViewController: UIViewController {
             }
             self.lblCreatedDate.text = TimeHelper.getReadableDateString(taigaDate: issueDetail.createdDate)
             
-            self.updateViewConstraints()
+            activityView.removeFromSuperview()
+            activityView.stopAnimating()
+            self.view.subviews.forEach { $0.isHidden = false }
         }
     }
     
@@ -55,13 +61,5 @@ class IssueDetailsViewController: UIViewController {
             let message = "I'm currently working on \"#\(issue!.ref) \(issue!.subject)\""
             share(message: message)
         }
-    }
-    
-    func clearFields() {
-        self.lblName.text?.removeAll()
-        self.textDescription.text.removeAll()
-        self.lblStatus.text?.removeAll()
-        self.lblAssignedTo.text?.removeAll()
-        self.lblCreatedDate.text?.removeAll()
     }
 }
