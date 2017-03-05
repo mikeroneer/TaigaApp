@@ -12,18 +12,22 @@ class UserStoryDetailGET {
     let id: Int
     let ref: Int
     let subject: String
-    let assignedTo: String
+    let assignedTo: Int
     let status: Int
     let comment: String
     let totalPoints: Double
     let statusExtraInfo: StatusExtraInfo
     let assignedToExtraInfo: AssignedToExtraInfo
+    let createdDate: String
+    let description: String
     
     init(json: JSON) {
+        createdDate = json["created_date"].stringValue
+        description = json["description"].stringValue
         id = json["id"].intValue
         subject = json["subject"].stringValue
         ref = json["ref"].intValue
-        assignedTo = json["assigned_to"].stringValue
+        assignedTo = json["assigned_to"].intValue
         status = json["status"].intValue
         comment = json["comment"].stringValue
         totalPoints = json["total_points"].doubleValue

@@ -9,7 +9,8 @@
 import UIKit
 
 class StoryDetailsViewController: UIViewController {
-    var userstory: UserStoryDetail?
+    var userstoryId: Int = -1
+    var userstory: UserStoryDetailGET?
     
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var textDescription: UITextView!
@@ -21,28 +22,37 @@ class StoryDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        clearFields()
+        view.subviews.forEach { $0.isHidden = true }
+        let activityView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        activityView.center = self.view.center
+        activityView.startAnimating()
+        self.view.addSubview(activityView)
         
-        if let details = userstory {
-            lblName.text = "#\(details.ref) \(details.subject)"
+        UserstoryManager.instance().getUserstoryById(userstoryId: userstoryId) { details in
+            self.userstory = details
+            self.lblName.text = "#\(details.ref) \(details.subject)"
             
             if details.description.isEmpty {
-                textDescription.text = "No description"
+                self.textDescription.text = "No description"
             } else {
-                textDescription.text = details.description
+                self.textDescription.text = details.description
             }
             
-            lblCreated.text = TimeHelper.getReadableDateString(taigaDate: details.createdDate)
-            lblStatus.text = details.statusExtraInfo.name
-            lblStatus.textColor = UIColor(hexString: details.statusExtraInfo.color)
+            self.lblCreated.text = TimeHelper.getReadableDateString(taigaDate: details.createdDate)
+            self.lblStatus.text = details.statusExtraInfo.name
+            self.lblStatus.textColor = UIColor(hexString: details.statusExtraInfo.color)
             
             if details.assignedTo == 0 {
-                lblAssignedTo.text = "Not assigned"
+                self.lblAssignedTo.text = "Not assigned"
             } else {
-                lblAssignedTo.text = details.assignedToExtraInfo.fullNameDisplay
+                self.lblAssignedTo.text = details.assignedToExtraInfo.fullNameDisplay
             }
             
-            lblTotalPoints.text = "\(details.totalPoints) total points"
+            self.lblTotalPoints.text = "\(details.totalPoints) total points"
+            
+            activityView.removeFromSuperview()
+            activityView.stopAnimating()
+            self.view.subviews.forEach { $0.isHidden = false }
         }
     }
     
@@ -55,14 +65,5 @@ class StoryDetailsViewController: UIViewController {
             let message = "I'm currently working on \"#\(userstory!.ref) \(userstory!.subject)\""
             share(message: message)
         }
-    }
-    
-    func clearFields() {
-        self.lblName.text?.removeAll()
-        self.textDescription.text.removeAll()
-        self.lblStatus.text?.removeAll()
-        self.lblAssignedTo.text?.removeAll()
-        self.lblCreated.text?.removeAll()
-        self.lblTotalPoints.text?.removeAll()
     }
 }

@@ -52,7 +52,7 @@ class BacklogViewController: UIViewController {
         
         if segue.identifier == "segueUserStoryDetail" {
             if let storyDetailsVC = segue.destination as? StoryDetailsViewController, let idx = index {
-                storyDetailsVC.userstory = userStories[idx.row]
+                storyDetailsVC.userstoryId = userStories[idx.row].id
             }
         }
     }

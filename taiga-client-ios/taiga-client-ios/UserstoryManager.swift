@@ -52,4 +52,18 @@ class UserstoryManager {
             }
         }
     }
+    
+    func getUserstoryById(userstoryId: Int, completion: @escaping( _ userstoryDetail: UserStoryDetailGET) -> ()) {
+        provider.request(.getUserstoryById(userstoryId: userstoryId)) { result in
+            switch result {
+            case let .success(moyaResponse):
+                if moyaResponse.statusCode == 200 {
+                    let json = JSON(data: (moyaResponse.data))
+                    completion(UserStoryDetailGET(json: json))
+                }
+            case .failure:
+                break
+            }
+        }
+    }
 }
