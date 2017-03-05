@@ -13,18 +13,34 @@ class WikiViewController: UIViewController {
     var wikiLinks: [WikiLink] = []
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var loadingAnimator: UIActivityIndicatorView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        
+        WikiManager.instance().getWikiLinksForProject(projectId: TaigaSettings.SELECTED_PROJECT_ID) { (wikiLinks) in
+            self.wikiLinks = wikiLinks
+            
+            if self.wikiLinks.count > 0 {
+                self.tableView.reloadData()
+                self.tableView.backgroundView = nil
+            } else {
+                let label = UILabel()
+                label.textAlignment = .center
+                label.text = "Looks empty here."
+                self.tableView.backgroundView = label
+            }
+            
+            self.loadingAnimator.isHidden = true
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        
-        WikiManager.instance().getWikiLinksForProject(projectId: TaigaSettings.SELECTED_PROJECT_ID) { (wikiLinks) in
-            self.wikiLinks = wikiLinks
-            self.tableView.reloadData()
-        }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -35,7 +51,7 @@ class WikiViewController: UIViewController {
         if segue.identifier == "segueWikiDetail" {
             if let wikiDetailsVC = segue.destination as? WikiDetailsViewController, let idx = index {
                 wikiDetailsVC.wikiTitle = wikiLinks[idx.row].title
-                wikiDetailsVC.wikiPageId = wikiLinks[idx.row].id
+                wikiDetailsVC.wikiPageSlug = wikiLinks[idx.row].slug
             }
         }
     }

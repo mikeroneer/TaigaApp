@@ -67,4 +67,19 @@ class WikiManager {
             }
         }
     }
+    
+    func getWikiPageBySlug(slug: String, completion: @escaping (_ wikiPage: WikiPage) -> ()) {
+        provider.request(.getWikiPageBySlug(slug: slug)) { result in
+            switch result {
+            case let .success(moyaResponse):
+                if moyaResponse.statusCode == 200 {
+                    let json = JSON(data: (moyaResponse.data))
+                    
+                    completion(WikiPage(json: json))
+                }
+            case let .failure(error):
+                print(error)
+            }
+        }
+    }
 }

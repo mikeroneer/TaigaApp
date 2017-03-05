@@ -12,6 +12,7 @@ import SwiftKeychainWrapper
 class ProjectOverviewViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var loadingAnimator: UIActivityIndicatorView!
     
     
     var projects: [ProjectListEntry] = []
@@ -28,6 +29,8 @@ class ProjectOverviewViewController: UIViewController {
         ProjectManager.instance().getProjectsForUser(userid: TaigaSettings.getAuthenticatedUser()) { (projectListEntries) in
             self.projects = projectListEntries
             self.tableView.reloadData()
+            
+            self.loadingAnimator.isHidden = true
         }
     }
 
@@ -60,5 +63,6 @@ extension ProjectOverviewViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let projectId = projects[indexPath.row].id
         TaigaSettings.SELECTED_PROJECT_ID = projectId
+        TaigaSettings.SELECTED_PROJECT_NAME = projects[indexPath.row].name
     }
 }

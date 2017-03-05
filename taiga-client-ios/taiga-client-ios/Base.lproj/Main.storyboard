@@ -42,7 +42,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Server" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h0e-ks-KiT">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Server (empty for default)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h0e-ks-KiT">
                                 <rect key="frame" x="82" y="353" width="250" height="30"/>
                                 <color key="backgroundColor" red="0.98039215690000003" green="1" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -273,12 +273,16 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6zs-AB-Bi2" customClass="User">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="5i6-Ys-Qyd">
+                                    <rect key="frame" x="0.0" y="114" width="414" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="userstory_cell" id="gqM-1O-g4g" customClass="UserstoryCell" customModule="taiga_client_ios" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" tableViewCell="gqM-1O-g4g" id="qUG-zj-Fq1">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="85.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="86"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="232" text="#7 Userstory name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVu-lM-qIa">
@@ -345,6 +349,7 @@
                         <nil key="title"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="loadingAnimator" destination="5i6-Ys-Qyd" id="WSb-1c-pOa"/>
                         <outlet property="userStoriesTableView" destination="6zs-AB-Bi2" id="yxe-m4-nnL"/>
                     </connections>
                 </viewController>
@@ -367,12 +372,16 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uaa-G3-Cuq">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" id="Fth-TQ-ZYM">
+                                    <rect key="frame" x="0.0" y="72" width="414" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="wiki_cell" id="x8t-ys-gIs">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x8t-ys-gIs" id="mp5-rj-Idu">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -392,6 +401,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Wiki" id="aRg-V6-8fA"/>
                     <connections>
+                        <outlet property="loadingAnimator" destination="Fth-TQ-ZYM" id="WCO-fJ-y0w"/>
                         <outlet property="tableView" destination="uaa-G3-Cuq" id="job-RQ-9MP"/>
                     </connections>
                 </viewController>
@@ -399,10 +409,10 @@
             </objects>
             <point key="canvasLocation" x="3824.8000000000002" y="515.8920539730135"/>
         </scene>
-        <!--Wiki Details-->
+        <!--Wikipage-->
         <scene sceneID="GNd-ws-W2h">
             <objects>
-                <viewController title="Wiki Details" id="CPJ-HE-ame" customClass="WikiDetailsViewController" customModule="taiga_client_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Wikipage" id="CPJ-HE-ame" customClass="WikiDetailsViewController" customModule="taiga_client_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="l8V-Td-IFx"/>
                         <viewControllerLayoutGuide type="bottom" id="3jl-hj-14Z"/>
@@ -414,11 +424,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23h-19-2CX">
                                 <rect key="frame" x="16" y="72" width="382" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.4272091985" green="0.56925284860000003" blue="0.00070665456589999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Lbu-8P-Tml">
-                                <rect key="frame" x="20" y="109" width="374" height="570"/>
+                                <rect key="frame" x="16" y="109" width="382" height="570"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -427,10 +437,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Lbu-8P-Tml" firstAttribute="trailing" secondItem="FdL-th-v3F" secondAttribute="trailingMargin" id="358-4h-9k4"/>
+                            <constraint firstAttribute="trailing" secondItem="Lbu-8P-Tml" secondAttribute="trailing" constant="16" id="4ye-aM-9OM"/>
                             <constraint firstAttribute="trailing" secondItem="23h-19-2CX" secondAttribute="trailing" constant="16" id="5iH-ne-XaX"/>
-                            <constraint firstItem="Lbu-8P-Tml" firstAttribute="leading" secondItem="FdL-th-v3F" secondAttribute="leadingMargin" id="95s-yg-Hq8"/>
                             <constraint firstItem="23h-19-2CX" firstAttribute="top" secondItem="l8V-Td-IFx" secondAttribute="bottom" constant="8" id="NzH-UN-vg3"/>
+                            <constraint firstItem="Lbu-8P-Tml" firstAttribute="leading" secondItem="FdL-th-v3F" secondAttribute="leading" constant="16" id="PWY-5R-NVE"/>
                             <constraint firstItem="23h-19-2CX" firstAttribute="leading" secondItem="FdL-th-v3F" secondAttribute="leading" constant="16" id="bQy-Nh-TeX"/>
                             <constraint firstItem="3jl-hj-14Z" firstAttribute="top" secondItem="Lbu-8P-Tml" secondAttribute="bottom" constant="8" id="cEg-Kt-Fmz"/>
                             <constraint firstItem="Lbu-8P-Tml" firstAttribute="top" secondItem="23h-19-2CX" secondAttribute="bottom" constant="8" id="huF-J9-LZc"/>
@@ -443,7 +453,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a7d-3H-zUR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4688.8000000000002" y="515.8920539730135"/>
+            <point key="canvasLocation" x="4688.4057971014499" y="515.21739130434787"/>
         </scene>
         <!--Story Details-->
         <scene sceneID="mCE-7c-KI0">
@@ -566,6 +576,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hlW-aw-wvp">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" id="mNF-qd-DMB">
+                                    <rect key="frame" x="0.0" y="114" width="414" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="issue_cell" id="CUs-b8-zFy" customClass="IssueOverviewCell" customModule="taiga_client_ios" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="86"/>
@@ -635,6 +649,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Issues" id="mYV-CR-L2z"/>
                     <connections>
+                        <outlet property="loadingAnimator" destination="mNF-qd-DMB" id="iLd-Aw-BKg"/>
                         <outlet property="tableView" destination="hlW-aw-wvp" id="ORg-hd-k6y"/>
                     </connections>
                 </viewController>
@@ -772,12 +787,16 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r4Z-Qe-MnI">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" id="C28-q6-1jx">
+                                    <rect key="frame" x="0.0" y="128" width="414" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="project_cell" id="Eyt-YA-gaO" customClass="ProjectOverviewCell" customModule="taiga_client_ios" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" tableViewCell="Eyt-YA-gaO" id="Rc7-WM-jPS">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSS-7h-61C">
@@ -879,6 +898,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="loadingAnimator" destination="C28-q6-1jx" id="pSE-Ua-fXZ"/>
                         <outlet property="tableView" destination="r4Z-Qe-MnI" id="Wid-hZ-uBL"/>
                     </connections>
                 </viewController>

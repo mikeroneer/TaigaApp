@@ -10,7 +10,7 @@ import UIKit
 
 class WikiDetailsViewController: UIViewController {
     var wikiTitle: String?
-    var wikiPageId: Int = -1
+    var wikiPageSlug: String = ""
     var wikiEntry: WikiPage?
     
     @IBOutlet weak var lblTitle: UILabel!
@@ -20,8 +20,9 @@ class WikiDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         lblTitle.text = wikiTitle
+        lblcontent.text.removeAll()
         
-        WikiManager.instance().getWikiPage(pageId: wikiPageId) { wikiPage in
+        WikiManager.instance.getWikiPageBySlug(slug: wikiPageSlug) { wikiPage in
             self.lblcontent.text = wikiPage.content
         }
     }

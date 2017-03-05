@@ -14,7 +14,6 @@
 		2AB83C141E65816A00D3367E /* IssuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB83C131E65816A00D3367E /* IssuesViewController.swift */; };
 		2AB83C161E6583BD00D3367E /* IssueDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB83C151E6583BD00D3367E /* IssueDetail.swift */; };
 		2AB83C181E6585B800D3367E /* IssueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB83C171E6585B800D3367E /* IssueManager.swift */; };
-		2AB83C1A1E658D0300D3367E /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB83C191E658D0300D3367E /* TimelineViewController.swift */; };
 		2AB83C1C1E658D3200D3367E /* TimelineEntryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB83C1B1E658D3200D3367E /* TimelineEntryDetail.swift */; };
 		2AB83C1E1E658F9000D3367E /* TimelineManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB83C1D1E658F9000D3367E /* TimelineManager.swift */; };
 		2AB83C211E6760EE00D3367E /* IssueOverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB83C201E6760EE00D3367E /* IssueOverviewCell.swift */; };
@@ -94,7 +93,6 @@
 		2AB83C131E65816A00D3367E /* IssuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesViewController.swift; sourceTree = "<group>"; };
 		2AB83C151E6583BD00D3367E /* IssueDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueDetail.swift; sourceTree = "<group>"; };
 		2AB83C171E6585B800D3367E /* IssueManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueManager.swift; sourceTree = "<group>"; };
-		2AB83C191E658D0300D3367E /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		2AB83C1B1E658D3200D3367E /* TimelineEntryDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineEntryDetail.swift; sourceTree = "<group>"; };
 		2AB83C1D1E658F9000D3367E /* TimelineManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineManager.swift; sourceTree = "<group>"; };
 		2AB83C201E6760EE00D3367E /* IssueOverviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueOverviewCell.swift; sourceTree = "<group>"; };
@@ -285,7 +283,6 @@
 				B43EDA751E5CAAB600FA1357 /* PopoverCreateProjectViewController.swift */,
 				2A876A951E64BC9C008CF223 /* BacklogViewController.swift */,
 				2AB83C131E65816A00D3367E /* IssuesViewController.swift */,
-				2AB83C191E658D0300D3367E /* TimelineViewController.swift */,
 				2AB83C261E6842FE00D3367E /* WikiViewController.swift */,
 			);
 			name = viewcontroller;
@@ -716,7 +713,6 @@
 				2AB83C161E6583BD00D3367E /* IssueDetail.swift in Sources */,
 				B44775C91E5339360026C5A1 /* TaigaAccessTokenPlugin.swift in Sources */,
 				2AB83C3A1E6899FB00D3367E /* IssueDetailGET.swift in Sources */,
-				2AB83C1A1E658D0300D3367E /* TimelineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

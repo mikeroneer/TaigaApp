@@ -35,4 +35,5 @@ class TaigaSettings {
     }
     
     static var SELECTED_PROJECT_ID: Int = 0
+    static var SELECTED_PROJECT_NAME: String = ""
 }

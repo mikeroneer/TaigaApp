@@ -11,7 +11,6 @@ import UIKit
 class StoryDetailsViewController: UIViewController {
     var userstory: UserStoryDetail?
     
-    
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var textDescription: UITextView!
     @IBOutlet weak var lblCreated: UILabel!
@@ -22,8 +21,10 @@ class StoryDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        clearFields()
+        
         if let details = userstory {
-            lblName.text = details.subject
+            lblName.text = "#\(details.ref) \(details.subject)"
             
             if details.description.isEmpty {
                 textDescription.text = "No description"
@@ -47,5 +48,14 @@ class StoryDetailsViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func clearFields() {
+        self.lblName.text?.removeAll()
+        self.textDescription.text.removeAll()
+        self.lblStatus.text?.removeAll()
+        self.lblAssignedTo.text?.removeAll()
+        self.lblCreated.text?.removeAll()
+        self.lblTotalPoints.text?.removeAll()
     }
 }
