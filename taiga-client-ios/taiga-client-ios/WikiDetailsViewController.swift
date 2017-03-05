@@ -22,7 +22,7 @@ class WikiDetailsViewController: UIViewController {
         lblTitle.text = wikiTitle
         lblcontent.text.removeAll()
         
-        WikiManager.instance.getWikiPageBySlug(slug: wikiPageSlug) { wikiPage in
+        WikiManager.instance().getWikiPageBySlug(slug: wikiPageSlug) { wikiPage in
             self.lblcontent.text = wikiPage.content
         }
     }
