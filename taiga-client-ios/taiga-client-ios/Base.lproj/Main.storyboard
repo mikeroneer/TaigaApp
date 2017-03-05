@@ -548,6 +548,13 @@
                             <constraint firstItem="bGj-L9-52H" firstAttribute="top" secondItem="b4v-6y-grj" secondAttribute="bottom" id="xZI-DM-brm"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Story Details" id="d5F-sY-PBc">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="ils-mY-OEd">
+                            <connections>
+                                <action selector="onShareClicked:" destination="brZ-T6-WlD" id="OzC-f6-vNi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="lblAssignedTo" destination="bGj-L9-52H" id="Dqh-hk-sRS"/>
                         <outlet property="lblCreated" destination="aPa-b8-11d" id="9F5-dn-Xqz"/>
@@ -741,6 +748,13 @@
                             <constraint firstItem="YtZ-8I-8qi" firstAttribute="top" secondItem="Yi9-ra-fIw" secondAttribute="bottom" constant="22" id="yp7-P7-Qyk"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Issue Details" id="ian-Cy-G7S">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="2Ub-cP-R19">
+                            <connections>
+                                <action selector="onShareClicked:" destination="CZ5-SD-spy" id="6AW-fz-HZV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="lblAssignedTo" destination="YtZ-8I-8qi" id="ara-eh-cXd"/>
                         <outlet property="lblCreatedDate" destination="Yi9-ra-fIw" id="8ha-fp-vV6"/>
@@ -927,11 +941,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon_backlog" width="29" height="29"/>
-        <image name="icon_issues" width="29" height="29"/>
+        <image name="icon_backlog" width="20" height="20"/>
+        <image name="icon_issues" width="20" height="20"/>
         <image name="icon_likes" width="133" height="133"/>
         <image name="icon_watchers" width="133" height="133"/>
-        <image name="icon_wiki" width="29" height="29"/>
+        <image name="icon_wiki" width="20" height="20"/>
         <image name="login_background" width="360" height="640"/>
         <image name="taiga_icon" width="555" height="555"/>
     </resources>

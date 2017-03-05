@@ -49,6 +49,13 @@ class StoryDetailsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+
+    @IBAction func onShareClicked(_ sender: Any) {
+        if userstory != nil {
+            let message = "I'm currently working on \"#\(userstory!.ref) \(userstory!.subject)\""
+            share(message: message)
+        }
+    }
     
     func clearFields() {
         self.lblName.text?.removeAll()

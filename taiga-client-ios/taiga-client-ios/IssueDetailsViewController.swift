@@ -10,6 +10,7 @@ import UIKit
 
 class IssueDetailsViewController: UIViewController {
     var issueId: Int = -1
+    var issue: IssueDetailGET? = nil
     
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var textDescription: UITextView!
@@ -23,6 +24,7 @@ class IssueDetailsViewController: UIViewController {
         clearFields()
         
         IssueManager.instance().getDetailsOfIssue(issueId: issueId) { issueDetail in
+            self.issue = issueDetail
             self.lblName.text = "#\(issueDetail.ref) \(issueDetail.subject)"
             
             if issueDetail.description.isEmpty {
@@ -46,6 +48,13 @@ class IssueDetailsViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func onShareClicked(_ sender: Any) {
+        if issue != nil {
+            let message = "I'm currently working on \"#\(issue!.ref) \(issue!.subject)\""
+            share(message: message)
+        }
     }
     
     func clearFields() {
