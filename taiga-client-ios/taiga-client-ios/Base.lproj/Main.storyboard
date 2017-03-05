@@ -498,8 +498,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1R8-NE-Zce">
-                                <rect key="frame" x="20" y="236" width="374" height="200"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1R8-NE-Zce">
+                                <rect key="frame" x="20" y="236" width="374" height="394.66666666666663"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</string>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -507,13 +507,13 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created on" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7T-mQ-TWi">
-                                <rect key="frame" x="20" y="443.66666666666669" width="374" height="17"/>
+                                <rect key="frame" x="20" y="638.33333333333337" width="374" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="10 May 15" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPa-b8-11d">
-                                <rect key="frame" x="20" y="460.66666666666669" width="374" height="15.666666666666629"/>
+                                <rect key="frame" x="20" y="655.33333333333348" width="374" height="15.666666666666629"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -521,6 +521,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Y3f-Bj-3b5" firstAttribute="top" secondItem="aPa-b8-11d" secondAttribute="bottom" constant="16" id="13U-iI-1pf"/>
                             <constraint firstItem="aPa-b8-11d" firstAttribute="leading" secondItem="CkE-iG-FEq" secondAttribute="leadingMargin" id="1K6-D8-mRO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nWC-Ei-ktm" secondAttribute="trailing" id="1NR-ea-N6I"/>
                             <constraint firstItem="1R8-NE-Zce" firstAttribute="trailing" secondItem="CkE-iG-FEq" secondAttribute="trailingMargin" id="7EV-sC-Cpb"/>
@@ -695,8 +696,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="253" verticalCompressionResistancePriority="1000" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s22-Mm-okM">
-                                <rect key="frame" x="16" y="210" width="382" height="200"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="253" verticalCompressionResistancePriority="1000" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s22-Mm-okM">
+                                <rect key="frame" x="16" y="210" width="382" height="419.33333333333337"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</string>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -710,13 +711,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created on" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TK6-W7-yMq">
-                                <rect key="frame" x="20" y="417.66666666666669" width="374" height="17"/>
+                                <rect key="frame" x="20" y="637" width="374" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="10 May 15" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yi9-ra-fIw">
-                                <rect key="frame" x="20" y="434.66666666666669" width="374" height="17"/>
+                                <rect key="frame" x="20" y="654" width="374" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -726,6 +727,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="QN4-jj-tg1" secondAttribute="trailing" constant="16" id="0Qf-iV-neV"/>
                             <constraint firstItem="YPj-K4-Wih" firstAttribute="top" secondItem="AL3-lA-9g4" secondAttribute="bottom" constant="16" id="1xU-VE-y5f"/>
+                            <constraint firstItem="URX-Fn-PZj" firstAttribute="top" secondItem="Yi9-ra-fIw" secondAttribute="bottom" constant="16" id="6fs-5F-Euw"/>
                             <constraint firstAttribute="trailing" secondItem="s22-Mm-okM" secondAttribute="trailing" constant="16" id="9mv-xX-kPu"/>
                             <constraint firstItem="TK6-W7-yMq" firstAttribute="top" secondItem="s22-Mm-okM" secondAttribute="bottom" constant="8" id="D5b-s6-aV7"/>
                             <constraint firstItem="YtZ-8I-8qi" firstAttribute="leading" secondItem="w2y-8w-gJI" secondAttribute="leading" constant="16" id="DtR-3U-8q3"/>
