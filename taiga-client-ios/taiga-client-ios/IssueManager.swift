@@ -11,13 +11,25 @@ import SwiftyJSON
 import SwiftKeychainWrapper
 
 class IssueManager {
-    static let instance = IssueManager()
+    private static var privateInstance : IssueManager?
     
     var provider: MoyaProvider<IssueService>
     
     private init() {
         let authPlugin = TaigaAccessTokenPlugin(token: KeychainWrapper.standard.string(forKey: AuthenticationManager.KEY_KEYCHAIN_AUTH_TOKEN)!)
-        provider = MoyaProvider<IssueService>(plugins: [authPlugin, PaginationPlugin(paginationEnabled: false), NetworkLoggerPlugin()])
+        provider = MoyaProvider<IssueService>(plugins: [authPlugin, PaginationPlugin(paginationEnabled: false), AuthenticationStatusPlugin()])
+    }
+    
+    class func instance() -> IssueManager {
+        guard let uwInstance = privateInstance else {
+            privateInstance = IssueManager()
+            return privateInstance!
+        }
+        return uwInstance
+    }
+    
+    class func destroy() {
+        privateInstance = nil
     }
     
     func getIssuesOfProject(projectId: Int, completion: @escaping (_ issueDetails: [IssueDetail]) -> ()) {

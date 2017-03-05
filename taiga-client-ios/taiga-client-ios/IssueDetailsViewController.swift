@@ -22,7 +22,7 @@ class IssueDetailsViewController: UIViewController {
         
         clearFields()
         
-        IssueManager.instance.getDetailsOfIssue(issueId: issueId) { issueDetail in
+        IssueManager.instance().getDetailsOfIssue(issueId: issueId) { issueDetail in
             self.lblName.text = "#\(issueDetail.ref) \(issueDetail.subject)"
             
             if issueDetail.description.isEmpty {

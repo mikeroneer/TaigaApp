@@ -18,7 +18,7 @@ class WikiViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         
-        WikiManager.instance.getWikiLinksForProject(projectId: TaigaSettings.SELECTED_PROJECT_ID) { (wikiLinks) in
+        WikiManager.instance().getWikiLinksForProject(projectId: TaigaSettings.SELECTED_PROJECT_ID) { (wikiLinks) in
             self.wikiLinks = wikiLinks
             
             if self.wikiLinks.count > 0 {

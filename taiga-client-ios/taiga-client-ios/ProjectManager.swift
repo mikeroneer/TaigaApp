@@ -12,11 +12,23 @@ import SwiftKeychainWrapper
 
 class ProjectManager {
     var provider: MoyaProvider<ProjectService>
-    static let instance = ProjectManager()
+    private static var privateInstance : ProjectManager?
     
     private init() {
         let authPlugin = TaigaAccessTokenPlugin(token: KeychainWrapper.standard.string(forKey: AuthenticationManager.KEY_KEYCHAIN_AUTH_TOKEN)!)
-        provider = MoyaProvider<ProjectService>(plugins: [authPlugin, PaginationPlugin(paginationEnabled: false), NetworkLoggerPlugin()])
+        provider = MoyaProvider<ProjectService>(plugins: [authPlugin, PaginationPlugin(paginationEnabled: false), AuthenticationStatusPlugin()])
+    }
+    
+    class func instance() -> ProjectManager {
+        guard let uwInstance = privateInstance else {
+            privateInstance = ProjectManager()
+            return privateInstance!
+        }
+        return uwInstance
+    }
+    
+    class func destroy() {
+        privateInstance = nil
     }
     
     func getProjectsForUser(userid: Int, completion: @escaping (_ projectListEntries: [ProjectListEntry]) -> ()) {

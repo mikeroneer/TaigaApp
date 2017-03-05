@@ -26,7 +26,7 @@ class BacklogViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        UserstoryManager.instance.getUserstoresOfProject(projectId: TaigaSettings.SELECTED_PROJECT_ID) { (userStoryDetails) in
+        UserstoryManager.instance().getUserstoresOfProject(projectId: TaigaSettings.SELECTED_PROJECT_ID) { (userStoryDetails) in
             self.userStories = userStoryDetails
             
             if self.userStories.count > 0 {

@@ -8,6 +8,7 @@
 
 import Moya
 import SwiftyJSON
+import SwiftKeychainWrapper
 
 class AuthenticationManager {
     static let KEY_KEYCHAIN_AUTH_TOKEN = "keychainAuthToken"
@@ -16,7 +17,7 @@ class AuthenticationManager {
     
     static let provider = MoyaProvider<AuthenticationService>()
     
-    static func authenticateUser(username: String, password: String, completion: @escaping (_ userAuthenticationDetail: UserAuthenticationDetail?) -> ()) {
+    class func authenticateUser(username: String, password: String, completion: @escaping (_ userAuthenticationDetail: UserAuthenticationDetail?) -> ()) {
         provider.request(.authenticateUser(username: username, password: password)) { result in
             switch result {
             case let .success(moyaResponse):
@@ -31,5 +32,17 @@ class AuthenticationManager {
                 print("Request failed")
             }
         }
+    }
+    
+    class func invalidateUser() {
+        KeychainWrapper.standard.removeObject(forKey: AuthenticationManager.KEY_KEYCHAIN_USERNAME_TOKEN)
+        KeychainWrapper.standard.removeObject(forKey: AuthenticationManager.KEY_KEYCHAIN_PASSWORD_TOKEN)
+        KeychainWrapper.standard.removeObject(forKey: AuthenticationManager.KEY_KEYCHAIN_AUTH_TOKEN)
+        
+        IssueManager.destroy()
+        ProjectManager.destroy()
+        UserManager.destroy()
+        UserstoryManager.destroy()
+        WikiManager.destroy()
     }
 }

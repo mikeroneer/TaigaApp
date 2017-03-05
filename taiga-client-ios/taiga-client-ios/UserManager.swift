@@ -12,11 +12,23 @@ import SwiftKeychainWrapper
 
 class UserManager {
     var provider: MoyaProvider<UserService>
-    static let instance = UserManager()
+    private static var privateInstance: UserManager?
     
     private init() {
         let authPlugin = TaigaAccessTokenPlugin(token: KeychainWrapper.standard.string(forKey: AuthenticationManager.KEY_KEYCHAIN_AUTH_TOKEN)!)
-        provider = MoyaProvider<UserService>(plugins: [authPlugin, PaginationPlugin(paginationEnabled: false), NetworkLoggerPlugin()])
+        provider = MoyaProvider<UserService>(plugins: [authPlugin, PaginationPlugin(paginationEnabled: false), AuthenticationStatusPlugin()])
+    }
+    
+    class func instance() -> UserManager {
+        guard let uwInstance = privateInstance else {
+            privateInstance = UserManager()
+            return privateInstance!
+        }
+        return uwInstance
+    }
+    
+    class func destroy() {
+        privateInstance = nil
     }
     
     func getMe(completion: @escaping (_ userDetail: UserDetail) -> ()) {

@@ -68,8 +68,10 @@ extension ProjectService : TargetType {
     
     var validate: Bool {
         switch self {
-        case .getProjectsForUser, .createProject:
+        case .getProjectsForUser:
             return true
+        case.createProject:
+            return false
         }
     }
 }

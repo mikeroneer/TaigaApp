@@ -65,6 +65,7 @@
 		B4C2A4651E51B1DB000A92CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4C2A4631E51B1DB000A92CF /* LaunchScreen.storyboard */; };
 		B4C2A4701E51B1DB000A92CF /* taiga_client_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C2A46F1E51B1DB000A92CF /* taiga_client_iosTests.swift */; };
 		B4C2A47B1E51B1DB000A92CF /* taiga_client_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C2A47A1E51B1DB000A92CF /* taiga_client_iosUITests.swift */; };
+		B4C2CBF71E6AE67F00C393C3 /* AuthenticationStatusPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C2CBF61E6AE67F00C393C3 /* AuthenticationStatusPlugin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +153,7 @@
 		B4C2A4761E51B1DB000A92CF /* taiga-client-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "taiga-client-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4C2A47A1E51B1DB000A92CF /* taiga_client_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taiga_client_iosUITests.swift; sourceTree = "<group>"; };
 		B4C2A47C1E51B1DB000A92CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4C2CBF61E6AE67F00C393C3 /* AuthenticationStatusPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationStatusPlugin.swift; sourceTree = "<group>"; };
 		B77A4A6E00B47878835153E0 /* Pods-taiga-client-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-taiga-client-iosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-taiga-client-iosUITests/Pods-taiga-client-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B9EE5E1618713DED34C3D4E2 /* Pods-taiga-client-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-taiga-client-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-taiga-client-iosTests/Pods-taiga-client-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		D427F40F9042C684B9F59147 /* Pods_taiga_client_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_taiga_client_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -307,6 +309,7 @@
 				B44775C81E5339360026C5A1 /* TaigaAccessTokenPlugin.swift */,
 				B44775CB1E545C3C0026C5A1 /* PaginationPlugin.swift */,
 				B484DE681E6AD0BF00134855 /* TimeHelper.swift */,
+				B4C2CBF61E6AE67F00C393C3 /* AuthenticationStatusPlugin.swift */,
 			);
 			name = helper;
 			sourceTree = "<group>";
@@ -670,6 +673,7 @@
 				2AB83C231E68399800D3367E /* UserstoryCell.swift in Sources */,
 				B484DE651E6AB86200134855 /* UIViewController.swift in Sources */,
 				2AB83C181E6585B800D3367E /* IssueManager.swift in Sources */,
+				B4C2CBF71E6AE67F00C393C3 /* AuthenticationStatusPlugin.swift in Sources */,
 				B4C2A4601E51B1DB000A92CF /* taiga_client_ios.xcdatamodeld in Sources */,
 				2A876A901E64B8CD008CF223 /* UserstoryService.swift in Sources */,
 				B43EDA761E5CAAB600FA1357 /* PopoverCreateProjectViewController.swift in Sources */,

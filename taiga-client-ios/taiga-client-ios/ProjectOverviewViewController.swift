@@ -26,7 +26,7 @@ class ProjectOverviewViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        ProjectManager.instance.getProjectsForUser(userid: TaigaSettings.getAuthenticatedUser()) { (projectListEntries) in
+        ProjectManager.instance().getProjectsForUser(userid: TaigaSettings.getAuthenticatedUser()) { (projectListEntries) in
             self.projects = projectListEntries
             self.tableView.reloadData()
             
@@ -36,13 +36,6 @@ class ProjectOverviewViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    @IBAction func onLogoutClicked(_ sender: Any) {
-        KeychainWrapper.standard.removeObject(forKey: AuthenticationManager.KEY_KEYCHAIN_USERNAME_TOKEN)
-        KeychainWrapper.standard.removeObject(forKey: AuthenticationManager.KEY_KEYCHAIN_PASSWORD_TOKEN)
-        KeychainWrapper.standard.removeObject(forKey: AuthenticationManager.KEY_KEYCHAIN_AUTH_TOKEN)
-        self.performSegue(withIdentifier: "unwindToLoginSegue", sender: sender)
     }
 }
 
