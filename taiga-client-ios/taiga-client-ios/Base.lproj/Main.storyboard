@@ -110,6 +110,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnLogin" destination="ZlJ-25-03a" id="hzX-dw-gS3"/>
                         <outlet property="textPassword" destination="cyc-jF-Vir" id="z5A-x7-PmE"/>
                         <outlet property="textServer" destination="h0e-ks-KiT" id="vG8-xO-mzu"/>
                         <outlet property="textUsername" destination="ZLn-cp-Q0x" id="Bn5-3S-Vz0"/>
@@ -282,7 +283,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" tableViewCell="gqM-1O-g4g" id="qUG-zj-Fq1">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="85"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="85.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="232" text="#7 Userstory name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVu-lM-qIa">
@@ -381,7 +382,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x8t-ys-gIs" id="mp5-rj-Idu">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -593,7 +594,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" tableViewCell="CUs-b8-zFy" id="DAH-OM-LrD">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="85"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="85.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="245" verticalCompressionResistancePriority="752" text="#7 Issuename" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsH-Aj-ri4">
@@ -814,7 +815,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" tableViewCell="Eyt-YA-gaO" id="Rc7-WM-jPS">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="99"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSS-7h-61C">

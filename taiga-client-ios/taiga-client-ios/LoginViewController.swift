@@ -14,6 +14,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textServer: UITextField!
     @IBOutlet weak var textUsername: UITextField!
     @IBOutlet weak var textPassword: UITextField!
+    @IBOutlet weak var btnLogin: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,6 +97,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.textServer.isEnabled = shouldEnable
         self.textUsername.isEnabled = shouldEnable
         self.textPassword.isEnabled = shouldEnable
+        self.btnLogin.isEnabled = shouldEnable
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
