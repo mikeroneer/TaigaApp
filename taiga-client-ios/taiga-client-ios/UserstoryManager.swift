@@ -47,8 +47,8 @@ class UserstoryManager {
                     
                     completion(userStoryDetails)
                 }
-            case let .failure(error):
-                print(error)
+            case .failure:
+                break
             }
         }
     }

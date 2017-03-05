@@ -47,8 +47,8 @@ class WikiManager {
                     
                     completion(wikiLinks)
                 }
-            case let .failure(error):
-                print(error)
+            case .failure:
+                break
             }
         }
     }
@@ -62,8 +62,8 @@ class WikiManager {
                     
                     completion(WikiPage(json: json))
                 }
-            case let .failure(error):
-                print(error)
+            case .failure:
+                break
             }
         }
     }
@@ -77,8 +77,8 @@ class WikiManager {
                     
                     completion(WikiPage(json: json))
                 }
-            case let .failure(error):
-                print(error)
+            case .failure:
+                break
             }
         }
     }

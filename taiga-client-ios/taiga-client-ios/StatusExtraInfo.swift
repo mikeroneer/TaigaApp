@@ -10,12 +10,12 @@ import SwiftyJSON
 
 class StatusExtraInfo {
     let color: String
-    let is_closed: Bool
+    let isClosed: Bool
     let name: String
     
     init(json: JSON) {
         color = json["color"].stringValue
-        is_closed = json["is_closed"].boolValue
+        isClosed = json["is_closed"].boolValue
         name = json["name"].stringValue
     }
 }

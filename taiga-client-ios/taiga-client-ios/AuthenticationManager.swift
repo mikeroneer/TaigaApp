@@ -28,8 +28,7 @@ class AuthenticationManager {
                 } else {
                     completion(nil)
                 }
-            default:
-                print("Request failed")
+            default: break
             }
         }
     }

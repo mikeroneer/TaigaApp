@@ -35,8 +35,8 @@ class TimelineManager {
                     
                     completion(timelineDetails)
                 }
-            case let .failure(error):
-                print(error)
+            case .failure:
+                break
             }
         }
     }

@@ -33,14 +33,14 @@ class IssueDetailsViewController: UIViewController {
                 self.textDescription.text = issueDetail.description
             }
             
-            self.lblStatus.text = issueDetail.status_extra_info.name
-            self.lblStatus.textColor = UIColor(hexString: issueDetail.status_extra_info.color)
+            self.lblStatus.text = issueDetail.statusExtraInfo.name
+            self.lblStatus.textColor = UIColor(hexString: issueDetail.statusExtraInfo.color)
             if issueDetail.assignedTo == 0 {
                 self.lblAssignedTo.text = "Not assigned"
             } else {
-                self.lblAssignedTo.text = issueDetail.assigned_to_extra_info?.full_name_display
+                self.lblAssignedTo.text = issueDetail.assignedToExtraInfo?.fullNameDisplay
             }
-            self.lblCreatedDate.text = TimeHelper.getReadableDateString(taigaDate: issueDetail.created_date)
+            self.lblCreatedDate.text = TimeHelper.getReadableDateString(taigaDate: issueDetail.createdDate)
             
             self.updateViewConstraints()
         }
