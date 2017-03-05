@@ -10,7 +10,7 @@ import UIKit
 import SwiftKeychainWrapper
 import Toast_Swift
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textServer: UITextField!
     @IBOutlet weak var textUsername: UITextField!
     @IBOutlet weak var textPassword: UITextField!
@@ -18,6 +18,10 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
+        
+        self.textServer.delegate = self
+        self.textUsername.delegate = self
+        self.textPassword.delegate = self
         
         // Auto login
         if let username = KeychainWrapper.standard.string(forKey: AuthenticationManager.KEY_KEYCHAIN_USERNAME_TOKEN), let password = KeychainWrapper.standard.string(forKey: AuthenticationManager.KEY_KEYCHAIN_PASSWORD_TOKEN) {
@@ -96,5 +100,12 @@ class LoginViewController: UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+}
+
+extension LoginViewController {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }
