@@ -30,6 +30,9 @@ Application is still under development. Currently following features are integra
 There is no caching or loading in predication. Everytime entering a view, data is fetched from the server. Even user interface wasn't that important until now.
 Application is just available in portrait-mode, as it doesn't make that much sense having these long lists in landscape.
 
+#### known ####
+If keyboard is hiding a text-input, it doesn't get scrolled yet. As a workaround, "Return" can be pressed and keyboard hides.
+
 ### tested devices ###
 
 * iPhone 5s with iOS 10.2.1
