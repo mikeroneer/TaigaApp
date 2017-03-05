@@ -11,23 +11,23 @@ import SwiftyJSON
 class UserDetail {
     let id: Int
     let username: String
-    let full_name: String
-    let gravatar_id: String
-    let total_private_projects: Int
-    let total_public_projects: Int
-    var projects_with_me = [ProjectsWithMe]()
+    let fullName: String
+    let gravatarId: String
+    let totalPrivateProjects: Int
+    let totalPublicProjects: Int
+    var projectsWithMe = [ProjectsWithMe]()
     
     init(json: JSON) {
         id = json["id"].intValue
         username = json["username"].stringValue
-        full_name = json["full_name"].stringValue
-        gravatar_id = json["gravatar_id"].stringValue
-        total_private_projects = json["total_private_projects"].intValue
-        total_public_projects = json["total_public_projects"].intValue
+        fullName = json["full_name"].stringValue
+        gravatarId = json["gravatar_id"].stringValue
+        totalPrivateProjects = json["total_private_projects"].intValue
+        totalPublicProjects = json["total_public_projects"].intValue
         let projectArrayJson = json["projects_with_me"].array
         
         for projectJson in projectArrayJson! {
-            projects_with_me.append(ProjectsWithMe(json: projectJson))
+            projectsWithMe.append(ProjectsWithMe(json: projectJson))
         }
     }
     

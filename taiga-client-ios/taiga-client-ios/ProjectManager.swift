@@ -46,8 +46,8 @@ class ProjectManager {
                     
                     completion(projectListEntries)
                 }
-            case let .failure(error):
-                print(error)
+            case .failure:
+                break
             }
         }
     }
@@ -63,8 +63,7 @@ class ProjectManager {
                 } else {
                     completion(nil)
                 }
-            case let .failure(error):
-                print(error)
+            case .failure:
                 completion(nil)
             }
         }

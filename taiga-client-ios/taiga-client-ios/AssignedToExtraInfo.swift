@@ -9,9 +9,9 @@
 import SwiftyJSON
 
 public class AssignedToExtraInfo {
-    let full_name_display: String
+    let fullNameDisplay: String
     
     init(json: JSON) {
-        full_name_display = json["full_name_display"].stringValue
+        fullNameDisplay = json["full_name_display"].stringValue
     }
 }

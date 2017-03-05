@@ -35,7 +35,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
             AuthenticationManager.authenticateUser(username: username, password: password) { (userAuthenticationDetail) in
                 if let authDetails = userAuthenticationDetail {
-                    let saveTokenSuccess = KeychainWrapper.standard.set(authDetails.auth_token, forKey: AuthenticationManager.KEY_KEYCHAIN_AUTH_TOKEN)
+                    let saveTokenSuccess = KeychainWrapper.standard.set(authDetails.authToken, forKey: AuthenticationManager.KEY_KEYCHAIN_AUTH_TOKEN)
                     
                     if saveTokenSuccess {
                         TaigaSettings.setAuthenticatedUser(value: authDetails.id)
@@ -71,7 +71,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         AuthenticationManager.authenticateUser(username: textUsername.text!, password: textPassword.text!) { (userAuthenticationDetail) in
             if let authDetails = userAuthenticationDetail {
-                let saveTokenSuccess = KeychainWrapper.standard.set(authDetails.auth_token, forKey: AuthenticationManager.KEY_KEYCHAIN_AUTH_TOKEN)
+                let saveTokenSuccess = KeychainWrapper.standard.set(authDetails.authToken, forKey: AuthenticationManager.KEY_KEYCHAIN_AUTH_TOKEN)
                 let saveUsernameSuccess = KeychainWrapper.standard.set(self.textUsername.text!, forKey: AuthenticationManager.KEY_KEYCHAIN_USERNAME_TOKEN)
                 let savePasswordSuccess = KeychainWrapper.standard.set(self.textPassword.text!, forKey: AuthenticationManager.KEY_KEYCHAIN_PASSWORD_TOKEN)
                 

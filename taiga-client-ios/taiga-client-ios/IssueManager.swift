@@ -47,8 +47,8 @@ class IssueManager {
                     
                     completion(issueDetails)
                 }
-            case let .failure(error):
-                print(error)
+            case .failure:
+                break
             }
         }
     }
@@ -61,8 +61,8 @@ class IssueManager {
                     let json = JSON(data: (moyaResponse.data))
                     completion(IssueDetailGET(json: json))
                 }
-            case let .failure(error):
-                print(error)
+            case .failure:
+                break
             }
         }
     }

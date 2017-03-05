@@ -14,9 +14,9 @@ class IssueDetailGET {
     let ref: Int
     let subject: String
     let description: String
-    let created_date: String
-    let status_extra_info: StatusExtraInfo
-    let assigned_to_extra_info: AssignedToExtraInfo?
+    let createdDate: String
+    let statusExtraInfo: StatusExtraInfo
+    let assignedToExtraInfo: AssignedToExtraInfo?
     
     init(json: JSON) {
         assignedTo = json["assigned_to"].intValue
@@ -24,13 +24,13 @@ class IssueDetailGET {
         ref = json["ref"].intValue
         subject = json["subject"].stringValue
         description = json["description"].stringValue
-        created_date = json["created_date"].stringValue
-        status_extra_info = StatusExtraInfo(json: json["status_extra_info"])
+        createdDate = json["created_date"].stringValue
+        statusExtraInfo = StatusExtraInfo(json: json["status_extra_info"])
         
         if json["assigned_to_extra_info"] == JSON.null {
-            assigned_to_extra_info = nil
+            assignedToExtraInfo = nil
         } else {
-            assigned_to_extra_info = AssignedToExtraInfo(json: json["assigned_to_extra_info"])
+            assignedToExtraInfo = AssignedToExtraInfo(json: json["assigned_to_extra_info"])
         }
     }
 }

@@ -54,8 +54,8 @@ extension ProjectOverviewViewController: UITableViewDelegate, UITableViewDataSou
         
         cell.lblProjectName.text = projects[indexPath.row].name
         cell.lblProjectDescription.text = projects[indexPath.row].description
-        cell.lblProjectLikes.text = String(projects[indexPath.row].total_fans)
-        cell.lblProjectWatchers.text = String(projects[indexPath.row].total_watchers)
+        cell.lblProjectLikes.text = String(projects[indexPath.row].totalFans)
+        cell.lblProjectWatchers.text = String(projects[indexPath.row].totalWatchers)
 
         return cell
     }

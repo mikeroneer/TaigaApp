@@ -11,11 +11,11 @@ import SwiftyJSON
 class WikiPage {
     let id: Int
     let content: String
-    let modified_date: String
+    let modifiedDate: String
     
     init(json: JSON) {
         id = json["id"].intValue
         content = json["content"].stringValue
-        modified_date = json["modified_date"].stringValue
+        modifiedDate = json["modified_date"].stringValue
     }
 }

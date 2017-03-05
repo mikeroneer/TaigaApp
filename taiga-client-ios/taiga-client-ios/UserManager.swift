@@ -39,8 +39,8 @@ class UserManager {
                     let json = JSON(data: (moyaResponse.data))
                     completion(UserDetail(json: json))
                 }
-            case let .failure(error):
-                print(error)
+            case .failure:
+                break
             }
         }
     }
@@ -53,8 +53,8 @@ class UserManager {
                     let json = JSON(data: (moyaResponse.data))
                     completion(UserDetail(json: json))
                 }
-            case let .failure(error):
-                print(error)
+            case .failure:
+                break
             }
         }
     }

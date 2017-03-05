@@ -39,7 +39,7 @@ class StoryDetailsViewController: UIViewController {
             if details.assignedTo == 0 {
                 lblAssignedTo.text = "Not assigned"
             } else {
-                lblAssignedTo.text = details.assignedToExtraInfo.full_name_display
+                lblAssignedTo.text = details.assignedToExtraInfo.fullNameDisplay
             }
             
             lblTotalPoints.text = "\(details.totalPoints) total points"

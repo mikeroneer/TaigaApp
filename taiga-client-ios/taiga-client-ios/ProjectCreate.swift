@@ -11,34 +11,34 @@ import Foundation
 class ProjectCreate {
     let name: String
     let description: String
-    let is_kanban_activated: Bool
-    let is_epics_activated: Bool
-    let is_issues_activated: Bool
-    let is_backlog_activated: Bool
-    let is_wiki_activated: Bool
-    let is_private: Bool
+    let isKanbanActivated: Bool
+    let isEpicsActivated: Bool
+    let isIssuesActivated: Bool
+    let isBacklogActivated: Bool
+    let isWikiActivated: Bool
+    let isPrivate: Bool
     
-    init(name: String, description: String, is_kanban_activated: Bool, is_epics_activated: Bool,is_issues_activated: Bool, is_backlog_activated: Bool, is_wiki_activated: Bool, is_private: Bool) {
+    init(name: String, description: String, isKanbanActivated: Bool, isEpicsActivated: Bool,isIssuesActivated: Bool, isBacklogActivated: Bool, isWikiActivated: Bool, isPrivate: Bool) {
         self.name = name
         self.description = description
-        self.is_kanban_activated = is_kanban_activated
-        self.is_epics_activated = is_epics_activated
-        self.is_issues_activated = is_issues_activated
-        self.is_backlog_activated = is_backlog_activated
-        self.is_wiki_activated = is_wiki_activated
-        self.is_private = is_private
+        self.isKanbanActivated = isKanbanActivated
+        self.isEpicsActivated = isEpicsActivated
+        self.isIssuesActivated = isIssuesActivated
+        self.isBacklogActivated = isBacklogActivated
+        self.isWikiActivated = isWikiActivated
+        self.isPrivate = isPrivate
     }
     
     func toJson() -> [String: Any]? {
         return [
            "name": name,
            "description": description,
-           "is_kanban_activated": is_kanban_activated,
-           "is_epics_activated": is_epics_activated,
-           "is_issues_activated": is_issues_activated,
-           "is_backlog_activated": is_backlog_activated,
-           "is_wiki_activated": is_wiki_activated,
-            "is_private": is_private
+           "is_kanban_activated": isKanbanActivated,
+           "is_epics_activated": isEpicsActivated,
+           "is_issues_activated": isIssuesActivated,
+           "is_backlog_activated": isBacklogActivated,
+           "is_wiki_activated": isWikiActivated,
+            "is_private": isPrivate
         ]
     }
 }

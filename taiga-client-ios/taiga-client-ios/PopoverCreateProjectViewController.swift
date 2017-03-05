@@ -44,11 +44,11 @@ class PopoverCreateProjectViewController: UIViewController, UITextFieldDelegate 
         
         // SCRUM
         if segControlTemplate.selectedSegmentIndex == 0 {
-            createProject(project: ProjectCreate(name: textName.text!, description: textDescription.text!, is_kanban_activated: false, is_epics_activated: false, is_issues_activated: true, is_backlog_activated: true, is_wiki_activated: true, is_private: isPrivate))
+            createProject(project: ProjectCreate(name: textName.text!, description: textDescription.text!, isKanbanActivated: false, isEpicsActivated: false, isIssuesActivated: true, isBacklogActivated: true, isWikiActivated: true, isPrivate: isPrivate))
         }
         // KANBAN
         else if segControlTemplate.selectedSegmentIndex == 1 {
-            createProject(project: ProjectCreate(name: textName.text!, description: textDescription.text!, is_kanban_activated: true, is_epics_activated: false, is_issues_activated: false, is_backlog_activated: false, is_wiki_activated: false, is_private: isPrivate))
+            createProject(project: ProjectCreate(name: textName.text!, description: textDescription.text!, isKanbanActivated: true, isEpicsActivated: false, isIssuesActivated: false, isBacklogActivated: false, isWikiActivated: false, isPrivate: isPrivate))
         }
     }
 
