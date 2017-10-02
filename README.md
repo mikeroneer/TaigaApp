@@ -13,7 +13,7 @@ password: demo123
 
 ### development state ###
 
-Application is still under development. Currently following features are integrated:
+Application is still under development. Currently the following features are integrated:
 
 * Login
 * Auto-Login
